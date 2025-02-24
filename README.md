@@ -40,7 +40,7 @@ A web-based platform for digital product top-ups including mobile credit, data p
 
 1. Clone this repository to your xampp/htdocs directory:
 ```bash
-git clone https://github.com/yourusername/PediaTopUp.git
+git clone https://github.com/bimadevs/PediaTopUp.git
 ```
 2. Install dependencies:
 ```bash
