@@ -1,0 +1,768 @@
+CRITICAL - 2025-02-11 08:47:51 --> Error: Class "App\Models\M_Base" not found
+[Method: GET, Route: /]
+in APPPATH\Controllers\BaseController.php on line 64.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:48:11 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(895): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(11): CodeIgniter\Model->__get('u_get')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:49:41 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(895): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(11): CodeIgniter\Model->__get('u_get')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:50:47 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(895): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Home.php(13): CodeIgniter\Model->__get('u_get')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:57:07 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 24.
+ 1 APPPATH\Views\Home\index.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(18): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:59:06 --> ErrorException: foreach() argument must be of type array|object, string given
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 24.
+ 1 APPPATH\Views\Home\index.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(18): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 08:59:24 --> ErrorException: foreach() argument must be of type array|object, string given
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 24.
+ 1 APPPATH\Views\Home\index.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(18): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 09:14:39 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 59.
+ 1 APPPATH\Views\Home\index.php(59): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 59)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 09:14:59 --> ErrorException: Undefined array key "icon"
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 66.
+ 1 APPPATH\Views\Home\index.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "icon"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 66)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(28): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:12:20 --> mysqli_sql_exception: Unknown column 'ovo' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:12:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:20 --> [Caused by] mysqli_sql_exception: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:12:38 --> mysqli_sql_exception: Unknown column 'slug,ovo' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug,ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:12:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug,ovo' in 'where clause'
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug,ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug,ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug,ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:38 --> [Caused by] mysqli_sql_exception: Unknown column 'slug,ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug,ovo` IS NULL', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug,ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:12:44 --> mysqli_sql_exception: Unknown column 'ovo' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug=ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:12:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug=ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug=ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:12:44 --> [Caused by] mysqli_sql_exception: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug=ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:13:22 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '> ovo]' at line 3 in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '["slug" => ovo]')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:13:22 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '> ovo]' at line 3
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '["slug" => ovo]')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:13:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '> ovo]' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '["slug" => ovo]')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:13:22 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '> ovo]' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `["slug"` = > ovo]', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '["slug" => ovo]')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:13:43 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '['slug' = > ovo]' at line 3 in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '['slug' => ovo]')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:13:43 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '['slug' = > ovo]' at line 3
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '[\'slug\' => ovo]')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:13:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '['slug' = > ovo]' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '[\'slug\' => ovo]')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:13:43 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '['slug' = > ovo]' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE [\'slug\' = > ovo]', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', '[\'slug\' => ovo]')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:14:46 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ovo' at line 3 in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug == ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:14:46 --> CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ovo' at line 3
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug == ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:14:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ovo' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug == ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:14:46 --> [Caused by] mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ovo' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = = ovo', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug == ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:14:53 --> mysqli_sql_exception: Unknown column 'ovo' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug = ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:14:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug = ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:14:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug = ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:14:53 --> [Caused by] mysqli_sql_exception: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `slug` = ovo', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'slug = ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-11 11:15:18 --> mysqli_sql_exception: Unknown column 'ovo' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-11 11:15:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:15:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 11:15:18 --> [Caused by] mysqli_sql_exception: Unknown column 'ovo' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `category`
+WHERE `ovo` IS NULL', [], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(34): App\Models\M_Base->data_count('category', 'ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 13:23:12 --> ArgumentCountError: Too few arguments to function App\Models\M_Base::data_where(), 2 passed in C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php on line 36 and at least 3 expected
+[Method: GET, Route: buy/ovo]
+in APPPATH\Models\M_Base.php on line 55.
+ 1 APPPATH\Controllers\Home.php(36): App\Models\M_Base->data_where('category', 'ovo')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 13:23:31 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: buy/ovo]
+in APPPATH\Controllers\Home.php on line 52.
+ 1 APPPATH\Controllers\Home.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 16:09:31 --> ErrorException: Undefined variable $p
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 152.
+ 1 APPPATH\Views\Buy\index.php(152): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 152)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-11 16:41:24 --> ErrorException: Undefined variable $p
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 152.
+ 1 APPPATH\Views\Buy\index.php(152): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $p', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 152)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

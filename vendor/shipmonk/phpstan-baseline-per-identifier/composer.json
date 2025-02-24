@@ -1,0 +1,80 @@
+{
+    "name": "shipmonk/phpstan-baseline-per-identifier",
+    "description": "Split your PHPStan baseline into multiple files, one per error identifier. Supports both neon baseline and PHP baseline.",
+    "license": [
+        "MIT"
+    ],
+    "type": "phpstan-extension",
+    "keywords": [
+        "dev",
+        "phpstan",
+        "phpstan baseline",
+        "phpstan extension",
+        "error identifier"
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "nette/neon": "^3.3.3 || ^4.0",
+        "phpstan/phpstan": "^2"
+    },
+    "require-dev": {
+        "editorconfig-checker/editorconfig-checker": "10.6.0",
+        "ergebnis/composer-normalize": "2.44.0",
+        "phpstan/phpstan-phpunit": "2.0.0",
+        "phpstan/phpstan-strict-rules": "2.0.0",
+        "phpunit/phpunit": "9.6.20",
+        "shipmonk/composer-dependency-analyser": "1.7",
+        "shipmonk/name-collision-detector": "2.1.1",
+        "shipmonk/phpstan-rules": "4.0.0",
+        "slevomat/coding-standard": "8.15.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ShipMonk\\PHPStan\\Baseline\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ShipMonk\\PHPStan\\Baseline\\": "tests/"
+        }
+    },
+    "bin": [
+        "bin/split-phpstan-baseline"
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false,
+            "ergebnis/composer-normalize": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
+        }
+    },
+    "scripts": {
+        "check": [
+            "@check:composer",
+            "@check:ec",
+            "@check:cs",
+            "@check:types",
+            "@check:tests",
+            "@check:collisions",
+            "@check:dependencies"
+        ],
+        "check:collisions": "detect-collisions src tests",
+        "check:composer": [
+            "composer normalize --dry-run --no-check-lock --no-update-lock",
+            "composer validate --strict"
+        ],
+        "check:cs": "phpcs",
+        "check:dependencies": "composer-dependency-analyser",
+        "check:ec": "ec src tests",
+        "check:tests": "phpunit tests",
+        "check:types": "phpstan analyse -vv --ansi",
+        "fix:cs": "phpcbf"
+    }
+}

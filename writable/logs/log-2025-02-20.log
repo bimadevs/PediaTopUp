@@ -1,0 +1,323 @@
+CRITICAL - 2025-02-20 06:30:17 --> ErrorException: Undefined array key "icon"
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 160.
+ 1 APPPATH\Views\Home\deposit.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "icon"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 160)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:30:36 --> ErrorException: Undefined variable $banks
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 160.
+ 1 APPPATH\Views\Home\deposit.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $banks', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 160)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:30:59 --> ErrorException: Undefined variable $banks
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 160.
+ 1 APPPATH\Views\Home\deposit.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $banks', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 160)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:31:06 --> ErrorException: Undefined array key "icon"
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 160.
+ 1 APPPATH\Views\Home\deposit.php(160): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "icon"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 160)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:31:38 --> ErrorException: Undefined variable $getBanks
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 165.
+ 1 APPPATH\Views\Home\deposit.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $getBanks', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 165)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:40:11 --> ErrorException: Undefined variable $b
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 177.
+ 1 APPPATH\Views\Home\deposit.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $b', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 177)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:40:24 --> ErrorException: Undefined variable $b
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 177.
+ 1 APPPATH\Views\Home\deposit.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $b', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 177)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:40:36 --> ErrorException: Undefined variable $b
+[Method: GET, Route: deposit]
+in APPPATH\Views\Home\deposit.php on line 177.
+ 1 APPPATH\Views\Home\deposit.php(177): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $b', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php', 177)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\deposit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit', [], true)
+ 5 APPPATH\Controllers\Home.php(171): view('Home/deposit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 06:56:37 --> ErrorException: Undefined array key "maximum"
+[Method: GET, Route: deposit]
+in APPPATH\Controllers\Home.php on line 153.
+ 1 APPPATH\Controllers\Home.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "maximum"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 153)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-20 09:41:08 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_pediatopup', 3306, '', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\PediaTopup\app\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+#5 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-20 09:41:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: admin/deposit]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `utility`
+WHERE `u_key` = :u_key:', [...], false)
+ 3 APPPATH\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-20 10:22:52 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_pediatopup', 3306, '', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\PediaTopup\app\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+#5 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-02-20 10:22:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: admin/deposit]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `utility`
+WHERE `u_key` = :u_key:', [...], false)
+ 3 APPPATH\Models\M_Base.php(114): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\BaseController.php(88): App\Models\M_Base->u_get('web-title')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 11:03:16 --> ErrorException: Array to string conversion
+[Method: POST, Route: deposit]
+in APPPATH\Controllers\Home.php on line 194.
+ 1 APPPATH\Controllers\Home.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositCreate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 11:03:31 --> ErrorException: Array to string conversion
+[Method: POST, Route: deposit]
+in APPPATH\Controllers\Home.php on line 194.
+ 1 APPPATH\Controllers\Home.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositCreate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 11:03:39 --> ErrorException: Array to string conversion
+[Method: POST, Route: deposit]
+in APPPATH\Controllers\Home.php on line 194.
+ 1 APPPATH\Controllers\Home.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositCreate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 11:04:13 --> ErrorException: Array to string conversion
+[Method: POST, Route: deposit]
+in APPPATH\Controllers\Home.php on line 194.
+ 1 APPPATH\Controllers\Home.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositCreate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 12:52:37 --> TypeError: strtotime(): Argument #2 ($baseTimestamp) must be of type ?int, string given
+[Method: POST, Route: deposit]
+in APPPATH\Controllers\Home.php on line 202.
+ 1 APPPATH\Controllers\Home.php(202): strtotime('+1 day', '2025-02-20 12:52:37')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositCreate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 12:59:44 --> ErrorException: Undefined variable $u
+[Method: GET, Route: /]
+in APPPATH\Views\Home\index.php on line 35.
+ 1 APPPATH\Views\Home\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $u', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php', 35)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/index', [], true)
+ 5 APPPATH\Controllers\Home.php(49): view('Home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 16:35:24 --> ErrorException: Undefined array key "id_bank"
+[Method: GET, Route: deposit/detail/D5878300]
+in APPPATH\Controllers\Home.php on line 236.
+ 1 APPPATH\Controllers\Home.php(236): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_bank"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 236)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositDetail('D5878300')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-20 16:51:26 --> ParseError: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif"
+[Method: GET, Route: deposit/detail/D6685160]
+in APPPATH\Views\Home\deposit-detail.php on line 421.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/deposit-detail', [], true)
+ 3 APPPATH\Controllers\Home.php(253): view('Home/deposit-detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->DepositDetail('D6685160')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

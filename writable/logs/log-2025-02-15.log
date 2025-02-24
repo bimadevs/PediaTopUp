@@ -1,0 +1,524 @@
+ERROR - 2025-02-15 19:48:02 --> mysqli_sql_exception: Table 'db_pediatopup.category' doesn't exist in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 19:48:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.category' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:48:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.category' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:48:02 --> [Caused by] mysqli_sql_exception: Table 'db_pediatopup.category' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-15 19:49:55 --> mysqli_sql_exception: Unknown column 'status' in 'order clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 19:49:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'order clause'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:49:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:49:55 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `category`
+ORDER BY `status` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `category`
+ORDER BY `status` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(44): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(12): App\Models\M_Base->all_data('category', 'status')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-15 19:53:50 --> mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'ovo')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 19:53:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+[Method: GET, Route: buy/ovo]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 2 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'ovo')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:53:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'ovo\'
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'ovo\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 4 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'ovo')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:53:50 --> [Caused by] mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `product`
+WHERE `slug` = \'ovo\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'ovo\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'ovo\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 5 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'ovo')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('ovo')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-15 19:56:58 --> mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'dana')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 19:56:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+[Method: GET, Route: buy/dana]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 2 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'dana')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:56:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'dana\'
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'dana\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 4 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'dana')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:56:58 --> [Caused by] mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `product`
+WHERE `slug` = \'dana\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'dana\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'dana\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 5 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'dana')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-15 19:57:03 --> mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 19:57:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+[Method: GET, Route: buy/gopay]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 2 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:57:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 4 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 19:57:03 --> [Caused by] mysqli_sql_exception: Table 'db_pediatopup.product' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 5 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-15 20:04:02 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-15 20:04:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: buy/gopay]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 2 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 20:04:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 4 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 20:04:02 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `product`
+WHERE `slug` = \'gopay\'
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`
+WHERE `slug` = :slug:
+ORDER BY `id` DESC', [...], false)
+ 5 APPPATH\Models\M_Base.php(59): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(39): App\Models\M_Base->data_where('product', 'slug', 'gopay')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('gopay')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 20:41:05 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin]
+in APPPATH\Views\template_admin.php on line 125.
+ 1 APPPATH\Views\template_admin.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php', 125)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('template_admin', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/index', [], true)
+ 6 APPPATH\Controllers\Admin.php(33): view('Admin/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 20:41:27 --> ErrorException: Array to string conversion
+[Method: GET, Route: admin]
+in APPPATH\Views\template_admin.php on line 125.
+ 1 APPPATH\Views\template_admin.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php', 125)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('template_admin', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/index', [], true)
+ 6 APPPATH\Controllers\Admin.php(33): view('Admin/index', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-15 20:43:13 --> ErrorException: Undefined variable $logo
+[Method: GET, Route: admin/users]
+in APPPATH\Views\template_admin.php on line 37.
+ 1 APPPATH\Views\template_admin.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $logo', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php', 37)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template_admin.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('template_admin', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/users', [], true)
+ 6 APPPATH\Controllers\Admin.php(98): view('Admin/users', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

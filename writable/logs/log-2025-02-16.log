@@ -1,0 +1,318 @@
+CRITICAL - 2025-02-16 05:49:03 --> ErrorException: Undefined array key "status"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\Admin\users.php on line 26.
+ 1 APPPATH\Views\Admin\users.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php', 26)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/users', [], true)
+ 5 APPPATH\Controllers\Admin.php(115): view('Admin/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 05:53:37 --> ErrorException: Undefined variable $d
+[Method: GET, Route: admin/users]
+in APPPATH\Views\Admin\users.php on line 34.
+ 1 APPPATH\Views\Admin\users.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $d', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/users', [], true)
+ 5 APPPATH\Controllers\Admin.php(116): view('Admin/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 05:53:53 --> ErrorException: Undefined array key "email"
+[Method: GET, Route: admin/users]
+in APPPATH\Views\Admin\users.php on line 34.
+ 1 APPPATH\Views\Admin\users.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "email"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\users.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/users', [], true)
+ 5 APPPATH\Controllers\Admin.php(116): view('Admin/users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:06:09 --> ErrorException: Undefined variable $data_email
+[Method: POST, Route: admin/users/add]
+in APPPATH\Controllers\Admin.php on line 140.
+ 1 APPPATH\Controllers\Admin.php(140): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_email', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 140)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-16 06:06:48 --> mysqli_sql_exception: Column 'name' cannot be null in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', Array)
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-16 06:06:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'name' cannot be null
+[Method: POST, Route: admin/users/add]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 2 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:06:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (NULL, \'088812781181\', \'$2y$10$jsjpIWPj.tEd3yT1KxIOXepMVgE/pxKsQa1lQ1FW4v.8pbVBqRkby\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (NULL, \'088812781181\', \'$2y$10$jsjpIWPj.tEd3yT1KxIOXepMVgE/pxKsQa1lQ1FW4v.8pbVBqRkby\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 4 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:06:48 --> [Caused by] mysqli_sql_exception: Column 'name' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (NULL, \'088812781181\', \'$2y$10$jsjpIWPj.tEd3yT1KxIOXepMVgE/pxKsQa1lQ1FW4v.8pbVBqRkby\', \'davidccooke23@gmail.com\', \'100000\', \'On\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (NULL, \'088812781181\', \'$2y$10$jsjpIWPj.tEd3yT1KxIOXepMVgE/pxKsQa1lQ1FW4v.8pbVBqRkby\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (NULL, \'088812781181\', \'$2y$10$jsjpIWPj.tEd3yT1KxIOXepMVgE/pxKsQa1lQ1FW4v.8pbVBqRkby\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 5 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-16 06:07:03 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', Array)
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-16 06:07:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '0' for key 'PRIMARY'
+[Method: POST, Route: admin/users/add]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 2 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:07:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (\'Syahbani Ardian\', \'088812781181\', \'$2y$10$UUA6vT1OXRjjPenbeWujfeB36ttNfVWY13.u3I4YYg0Lcv9CfxY.G\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (\'Syahbani Ardian\', \'088812781181\', \'$2y$10$UUA6vT1OXRjjPenbeWujfeB36ttNfVWY13.u3I4YYg0Lcv9CfxY.G\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 4 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:07:03 --> [Caused by] mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (\'Syahbani Ardian\', \'088812781181\', \'$2y$10$UUA6vT1OXRjjPenbeWujfeB36ttNfVWY13.u3I4YYg0Lcv9CfxY.G\', \'davidccooke23@gmail.com\', \'100000\', \'On\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (\'Syahbani Ardian\', \'088812781181\', \'$2y$10$UUA6vT1OXRjjPenbeWujfeB36ttNfVWY13.u3I4YYg0Lcv9CfxY.G\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (\'Syahbani Ardian\', \'088812781181\', \'$2y$10$UUA6vT1OXRjjPenbeWujfeB36ttNfVWY13.u3I4YYg0Lcv9CfxY.G\', \'davidccooke23@gmail.com\', \'100000\', \'On\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `users` (`name`, `phone`, `password`, `email`, `balance`, `status`) VALUES (:name:, :phone:, :password:, :email:, :balance:, :status:)', [...], false)
+ 5 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Admin.php(153): App\Models\M_Base->data_insert('users', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersAdd()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:08:39 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+[Method: GET, Route: admin/users/delete/%3C]
+in SYSTEMPATH\Router\Router.php on line 738.
+ 1 SYSTEMPATH\Router\Router.php(205): CodeIgniter\Router\Router->checkDisallowedChars('admin/users/delete/<')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('admin/users/delete/<')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:25:59 --> ErrorException: Undefined array key "id_user"
+[Method: POST, Route: admin/users/edit]
+in APPPATH\Controllers\Admin.php on line 208.
+ 1 APPPATH\Controllers\Admin.php(208): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_user"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 208)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->UsersEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:31:05 --> ArgumentCountError: Too few arguments to function App\Models\M_Base::data_where(), 2 passed in C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php on line 238 and at least 3 expected
+[Method: GET, Route: admin/product]
+in APPPATH\Models\M_Base.php on line 55.
+ 1 APPPATH\Controllers\Admin.php(238): App\Models\M_Base->data_where('product', 'id')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:31:21 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: admin/product]
+in SYSTEMPATH\Database\BaseConnection.php on line 927.
+ 1 SYSTEMPATH\Model.php(714): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(920): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Admin.php(238): CodeIgniter\Model->__call('alldata', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:31:25 --> ErrorException: Undefined array key "phone"
+[Method: GET, Route: admin/product]
+in APPPATH\Controllers\Admin.php on line 242.
+ 1 APPPATH\Controllers\Admin.php(242): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "phone"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 242)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:35:50 --> ErrorException: Undefined variable $all_users
+[Method: GET, Route: admin/product]
+in APPPATH\Views\Admin\Product\list.php on line 32.
+ 1 APPPATH\Views\Admin\Product\list.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $all_users', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php', 32)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/Product/list', [], true)
+ 5 APPPATH\Controllers\Admin.php(258): view('Admin/Product/list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:38:57 --> ErrorException: Undefined array key "idcat"
+[Method: GET, Route: admin/product]
+in APPPATH\Views\Admin\Product\list.php on line 48.
+ 1 APPPATH\Views\Admin\Product\list.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "idcat"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php', 48)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/Product/list', [], true)
+ 5 APPPATH\Controllers\Admin.php(259): view('Admin/Product/list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:39:12 --> ErrorException: Undefined array key "name"
+[Method: GET, Route: admin/product]
+in APPPATH\Views\Admin\Product\list.php on line 48.
+ 1 APPPATH\Views\Admin\Product\list.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php', 48)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\Product\\list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/Product/list', [], true)
+ 5 APPPATH\Controllers\Admin.php(259): view('Admin/Product/list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:40:55 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Result::getResultAray()
+[Method: GET, Route: admin/product]
+in APPPATH\Models\M_Base.php on line 103.
+ 1 APPPATH\Controllers\Admin.php(238): App\Models\M_Base->data_join('product', 'category', 'category.id AS idcat, category.slug, category.name AS catname, product.id, product.name, product.price, product.stock, product.status', 'category.id = product.id_category', 'product.price')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 06:41:20 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Result::orderBy()
+[Method: GET, Route: admin/product]
+in APPPATH\Models\M_Base.php on line 103.
+ 1 APPPATH\Controllers\Admin.php(238): App\Models\M_Base->data_join('product', 'category', 'category.id AS idcat, category.slug, category.name AS catname, product.id, product.name, product.price, product.stock, product.status', 'category.id = product.id_category', 'product.price')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 10:28:49 --> ErrorException: Undefined variable $data_loop
+[Method: POST, Route: admin/product/add]
+in APPPATH\Controllers\Admin.php on line 293.
+ 1 APPPATH\Controllers\Admin.php(293): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_loop', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 293)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductAdd()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-16 10:33:31 --> ErrorException: Undefined array key "id"
+[Method: POST, Route: admin/product/edit]
+in APPPATH\Controllers\Admin.php on line 335.
+ 1 APPPATH\Controllers\Admin.php(335): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 335)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductEdit()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

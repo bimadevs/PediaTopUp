@@ -1,0 +1,17 @@
+services:
+    errorFormatter.baselinePerIdentifier:
+        class: ShipMonk\PHPStan\Baseline\BaselinePerIdentifierFormatter
+        arguments:
+            baselinesDir: %shipmonkBaselinePerIdentifier.directory%
+            indent: %shipmonkBaselinePerIdentifier.indent%
+
+parameters:
+    shipmonkBaselinePerIdentifier:
+        directory: null
+        indent: '    '
+
+parametersSchema:
+    shipmonkBaselinePerIdentifier: structure([
+        directory: schema(string(), nullable())
+        indent: string()
+    ])

@@ -1,0 +1,54 @@
+CRITICAL - 2025-02-14 07:08:52 --> ErrorException: Undefined array key "price"
+[Method: GET, Route: buy/dana]
+in APPPATH\Controllers\Home.php on line 53.
+ 1 APPPATH\Controllers\Home.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "price"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 53)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-14 12:03:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Buy/detail.php"
+[Method: GET, Route: order/detail/dana]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Buy/detail.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/detail', [], true)
+ 3 APPPATH\Controllers\Home.php(106): view('Buy/detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('dana')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-14 12:03:49 --> ErrorException: Undefined array key "HTTP_REFERER"
+[Method: GET, Route: order/detail/dana]
+in APPPATH\Views\template.php on line 46.
+ 1 APPPATH\Views\template.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "HTTP_REFERER"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template.php', 46)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\template.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('template', [], true)
+ 5 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/detail', [], true)
+ 6 APPPATH\Controllers\Home.php(106): view('Buy/detail', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('dana')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-14 14:19:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templatee.php"
+[Method: GET, Route: admin]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templatee.php')
+ 2 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('templatee', [], true)
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/index', [], true)
+ 4 APPPATH\Controllers\Admin.php(18): view('Admin/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

@@ -1,0 +1,1492 @@
+CRITICAL - 2025-02-18 05:03:33 --> ParseError: syntax error, unexpected variable "$this"
+[Method: GET, Route: admin/users]
+in APPPATH\Controllers\Admin.php on line 695.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Admin', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 05:50:37 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 05:50:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 05:50:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 05:50:37 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 07:14:42 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 07:14:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 07:14:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 07:14:42 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 15:30:15 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 15:30:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/settings]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 15:30:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 15:30:15 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(726): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 15:40:16 --> ErrorException: Undefined variable $Deposits
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin.php on line 763.
+ 1 APPPATH\Controllers\Admin.php(763): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Deposits', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 763)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 15:41:47 --> ErrorException: Undefined variable $all_users
+[Method: GET, Route: admin/settings]
+in APPPATH\Views\Admin\settings.php on line 32.
+ 1 APPPATH\Views\Admin\settings.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $all_users', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\settings.php', 32)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\settings.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/settings', [], true)
+ 5 APPPATH\Controllers\Admin.php(780): view('Admin/settings', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 15:56:02 --> ParseError: syntax error, unexpected token ";"
+[Method: GET, Route: admin/settings]
+in APPPATH\Views\Admin\settings.php on line 39.
+ 1 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/settings', [], true)
+ 3 APPPATH\Controllers\Admin.php(780): view('Admin/settings', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 16:08:05 --> ParseError: syntax error, unexpected single-quoted string "total", expecting "]"
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Admin', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 16:28:10 --> ErrorException: Undefined variable $data_post
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 807.
+ 1 APPPATH\Controllers\Admin.php(807): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_post', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 807)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 16:28:16 --> ErrorException: Undefined variable $data_post
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 807.
+ 1 APPPATH\Controllers\Admin.php(807): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data_post', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 807)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 16:58:28 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(732): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 16:58:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(732): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 16:58:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(732): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 16:58:28 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(732): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:32:44 --> ArgumentCountError: Too few arguments to function CodeIgniter\HTTP\IncomingRequest::getFile(), 0 passed in C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php on line 858 and exactly 1 expected
+[Method: POST, Route: admin/settings/update]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 875.
+ 1 APPPATH\Controllers\Admin.php(858): CodeIgniter\HTTP\IncomingRequest->getFile()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:35:49 --> ErrorException: Undefined property: App\Controllers\Admin::$load
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 858.
+ 1 APPPATH\Controllers\Admin.php(858): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$load', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 858)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:37:44 --> ErrorException: Undefined property: App\Controllers\Admin::$load
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 858.
+ 1 APPPATH\Controllers\Admin.php(858): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$load', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 858)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:39:00 --> ErrorException: Undefined property: App\Controllers\Admin::$load
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 861.
+ 1 APPPATH\Controllers\Admin.php(861): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$load', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 861)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:39:27 --> ErrorException: Undefined array key "userfile"
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 867.
+ 1 APPPATH\Controllers\Admin.php(867): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userfile"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 867)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:39:41 --> ErrorException: Undefined property: App\Controllers\Admin::$upload
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 873.
+ 1 APPPATH\Controllers\Admin.php(873): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$upload', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 873)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:43:09 --> ErrorException: Undefined variable $getTamp
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 873.
+ 1 APPPATH\Controllers\Admin.php(873): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $getTamp', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 873)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:43:35 --> Error: Call to a member function move() on string
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 873.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:47:36 --> ErrorException: A non-numeric value encountered
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 867.
+ 1 APPPATH\Controllers\Admin.php(867): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 867)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:48:20 --> ErrorException: A non-numeric value encountered
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 868.
+ 1 APPPATH\Controllers\Admin.php(868): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 868)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:52:43 --> ErrorException: Only variables should be passed by reference
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 864.
+ 1 APPPATH\Controllers\Admin.php(864): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 864)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:53:23 --> ErrorException: Only variables should be passed by reference
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 864.
+ 1 APPPATH\Controllers\Admin.php(864): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Only variables should be passed by reference', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 864)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 18:56:01 --> ErrorException: unlink(home/img/banner/banner-1.jpg): No such file or directory
+[Method: POST, Route: admin/settings/update]
+in APPPATH\Controllers\Admin.php on line 868.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(home/img/banner/banner-1.jpg): No such file or directory', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 868)
+ 2 APPPATH\Controllers\Admin.php(868): unlink('home/img/banner/banner-1.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsUpdate()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 19:04:54 --> ErrorException: Undefined property: App\Controllers\Admin::$m_base
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin.php on line 787.
+ 1 APPPATH\Controllers\Admin.php(787): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$m_base', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 787)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 19:05:49 --> ErrorException: Undefined property: App\Controllers\Admin::$m_base
+[Method: GET, Route: admin/settings]
+in APPPATH\Controllers\Admin.php on line 787.
+ 1 APPPATH\Controllers\Admin.php(787): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin::$m_base', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 787)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 19:20:21 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 19:20:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 19:20:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 19:20:21 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:05:43 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:05:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:05:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:05:43 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:07:10 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:07:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:07:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:07:10 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:07:22 --> mysqli_sql_exception: Unknown column 'deposit.id' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, dep...', 'users.id = depo...')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:07:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+[Method: GET, Route: admin/transaction]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:07:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:07:22 --> [Caused by] mysqli_sql_exception: Unknown column 'deposit.id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `deposit`.`id`, `deposit`.`id_bank`, `deposit`.`total`, `deposit`.`bukti_pembayaran` AS `proof`, `deposit`.`note`, `deposit`.`status`, `deposit`.`created_at`, `users`.`name`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `deposit`.`id_user`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Admin.php(741): App\Models\M_Base->data_join('users', 'transaction', 'deposit.id, deposit.id_bank, deposit.total, deposit.bukti_pembayaran AS proof, deposit.note, deposit.status, deposit.created_at, users.name, users.email, users.phone', 'users.id = deposit.id_user')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->TransactionIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:22:14 --> ErrorException: Undefined array key "fee"
+[Method: GET, Route: admin/settings]
+in APPPATH\Views\Admin\settings.php on line 134.
+ 1 APPPATH\Views\Admin\settings.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "fee"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\settings.php', 134)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Admin\\settings.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Admin/settings', [], true)
+ 5 APPPATH\Controllers\Admin.php(805): view('Admin/settings', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->SettingsIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:34:17 --> ErrorException: Undefined variable $getProduct
+[Method: POST, Route: buy]
+in APPPATH\Controllers\Home.php on line 82.
+ 1 APPPATH\Controllers\Home.php(82): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $getProduct', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 82)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:34:35 --> ErrorException: Undefined array key 0
+[Method: POST, Route: buy]
+in APPPATH\Controllers\Home.php on line 88.
+ 1 APPPATH\Controllers\Home.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 88)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:35:17 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(119): App\Models\M_Base->data_count('transaction', '7533963')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:35:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/7533963]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(119): App\Models\M_Base->data_count('transaction', '7533963')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:35:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(119): App\Models\M_Base->data_count('transaction', '7533963')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:35:17 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(119): App\Models\M_Base->data_count('transaction', '7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:36:54 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:36:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/7533963]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:36:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:36:54 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:37:35 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:37:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/7533963]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:35 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:37:35 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:37:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/7533963]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:35 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'7533963\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(121): App\Models\M_Base->data_count('transaction', '7533963')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('7533963')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:37:51 --> mysqli_sql_exception: Unknown column 'fullname' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tr...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tr...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tr...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tr...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(109): App\Models\M_Base->data_insert('transaction', Array)
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:37:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fullname' in 'field list'
+[Method: POST, Route: buy]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (:id:, :user_id:, :product_id:, :fullname:, :phone:, :product:, :price:, :fee:, :total:, :metode:, :status:, :ip:)', [...], false)
+ 2 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Home.php(109): App\Models\M_Base->data_insert('transaction', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fullname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (\'P1930308\', \'2\', \'12\', \'Rehandra Fomin\', \'085156043170\', \'Gopay 50.000\', \'50000\', \'1000\', 51000, \'Saldo\', \'Completed\', \'::1\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (\'P1930308\', \'2\', \'12\', \'Rehandra Fomin\', \'085156043170\', \'Gopay 50.000\', \'50000\', \'1000\', 51000, \'Saldo\', \'Completed\', \'::1\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (:id:, :user_id:, :product_id:, :fullname:, :phone:, :product:, :price:, :fee:, :total:, :metode:, :status:, :ip:)', [...], false)
+ 4 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Home.php(109): App\Models\M_Base->data_insert('transaction', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:37:51 --> [Caused by] mysqli_sql_exception: Unknown column 'fullname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (\'P1930308\', \'2\', \'12\', \'Rehandra Fomin\', \'085156043170\', \'Gopay 50.000\', \'50000\', \'1000\', 51000, \'Saldo\', \'Completed\', \'::1\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (\'P1930308\', \'2\', \'12\', \'Rehandra Fomin\', \'085156043170\', \'Gopay 50.000\', \'50000\', \'1000\', 51000, \'Saldo\', \'Completed\', \'::1\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (\'P1930308\', \'2\', \'12\', \'Rehandra Fomin\', \'085156043170\', \'Gopay 50.000\', \'50000\', \'1000\', 51000, \'Saldo\', \'Completed\', \'::1\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `transaction` (`id`, `user_id`, `product_id`, `fullname`, `phone`, `product`, `price`, `fee`, `total`, `metode`, `status`, `ip`) VALUES (:id:, :user_id:, :product_id:, :fullname:, :phone:, :product:, :price:, :fee:, :total:, :metode:, :status:, :ip:)', [...], false)
+ 5 APPPATH\Models\M_Base.php(50): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Home.php(109): App\Models\M_Base->data_insert('transaction', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->BuyProduct()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:39:14 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:39:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/8015427]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:39:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:39:14 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-18 20:41:11 --> mysqli_sql_exception: Unknown column 'slug' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-18 20:41:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+[Method: GET, Route: order/detail/8015427]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 2 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:41:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 4 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:41:11 --> [Caused by] mysqli_sql_exception: Unknown column 'slug' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = \'8015427\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `transaction`
+WHERE `slug` = :slug:', [...], false)
+ 5 APPPATH\Models\M_Base.php(87): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Home.php(126): App\Models\M_Base->data_count('transaction', '8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('8015427')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:43:51 --> ErrorException: Undefined variable $icon_slug
+[Method: GET, Route: order/detail/P8015427]
+in APPPATH\Views\Buy\detail.php on line 187.
+ 1 APPPATH\Views\Buy\detail.php(187): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $icon_slug', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php', 187)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/detail', [], true)
+ 5 APPPATH\Controllers\Home.php(142): view('Buy/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('P8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:46:30 --> ErrorException: Undefined array key "product"
+[Method: GET, Route: order/detail/P8015427]
+in APPPATH\Views\Buy\detail.php on line 134.
+ 1 APPPATH\Views\Buy\detail.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php', 134)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/detail', [], true)
+ 5 APPPATH\Controllers\Home.php(142): view('Buy/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('P8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-18 20:48:41 --> ErrorException: Undefined array key "total"
+[Method: GET, Route: order/detail/P8015427]
+in APPPATH\Views\Buy\detail.php on line 163.
+ 1 APPPATH\Views\Buy\detail.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "total"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php', 163)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\detail.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/detail', [], true)
+ 5 APPPATH\Controllers\Home.php(142): view('Buy/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->detailOrder('P8015427')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

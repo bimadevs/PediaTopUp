@@ -1,0 +1,9 @@
+{
+    "name": "user/pediatopup",
+    "autoload": {
+        "psr-4": {
+            "User\\Pediatopup\\": "src/"
+        }
+    },
+    "require": {}
+}

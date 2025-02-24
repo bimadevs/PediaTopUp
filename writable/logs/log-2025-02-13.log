@@ -1,0 +1,60 @@
+CRITICAL - 2025-02-13 08:52:08 --> ErrorException: Undefined array key "stock"
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 143.
+ 1 APPPATH\Views\Buy\index.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stock"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 143)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-13 08:52:09 --> ErrorException: Undefined array key "stock"
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 143.
+ 1 APPPATH\Views\Buy\index.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stock"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 143)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-13 08:52:10 --> ErrorException: Undefined array key "stock"
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 143.
+ 1 APPPATH\Views\Buy\index.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "stock"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 143)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(57): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-13 17:13:08 --> ErrorException: Undefined variable $slug
+[Method: GET, Route: buy/dana]
+in APPPATH\Views\Buy\index.php on line 139.
+ 1 APPPATH\Views\Buy\index.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $slug', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php', 139)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Buy\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Buy/index', [], true)
+ 5 APPPATH\Controllers\Home.php(58): view('Buy/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->CategoryDetail('dana')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

@@ -1,0 +1,324 @@
+CRITICAL - 2025-02-21 07:17:40 --> ErrorException: Undefined variable $bank
+[Method: GET, Route: history]
+in APPPATH\Views\Home\history.php on line 215.
+ 1 APPPATH\Views\Home\history.php(215): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bank', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php', 215)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/history', [], true)
+ 5 APPPATH\Controllers\Home.php(295): view('Home/history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-21 17:08:00 --> mysqli_sql_exception: Unknown column 'transaction.id_product' in 'field list' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(266): App\Models\M_Base->data_join('users', 'transaction', 'transaction.id,...', 'users.id = tran...', 'transaction.id_...', '085156043170')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-21 17:08:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'transaction.id_product' in 'field list'
+[Method: GET, Route: history]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC', [], false)
+ 2 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(266): App\Models\M_Base->data_join('users', 'transaction', 'transaction.id, transaction.id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '085156043170')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:08:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'transaction.id_product' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC', [], false)
+ 4 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(266): App\Models\M_Base->data_join('users', 'transaction', 'transaction.id, transaction.id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '085156043170')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:08:00 --> [Caused by] mysqli_sql_exception: Unknown column 'transaction.id_product' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+ORDER BY `id` DESC', [], false)
+ 5 APPPATH\Models\M_Base.php(103): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(266): App\Models\M_Base->data_join('users', 'transaction', 'transaction.id, transaction.id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '085156043170')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:08:28 --> ErrorException: Array to string conversion
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 267.
+ 1 APPPATH\Controllers\Home.php(267): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 267)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:12:47 --> ErrorException: Undefined array key "slug"
+[Method: GET, Route: history]
+in APPPATH\Views\Home\history.php on line 249.
+ 1 APPPATH\Views\Home\history.php(249): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "slug"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php', 249)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/history', [], true)
+ 5 APPPATH\Controllers\Home.php(297): view('Home/history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:13:08 --> ErrorException: Array to string conversion
+[Method: GET, Route: history]
+in APPPATH\Views\Home\history.php on line 249.
+ 1 APPPATH\Views\Home\history.php(249): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php', 249)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/history', [], true)
+ 5 APPPATH\Controllers\Home.php(297): view('Home/history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:14:26 --> ErrorException: Undefined array key "created_at"
+[Method: GET, Route: history]
+in APPPATH\Views\Home\history.php on line 252.
+ 1 APPPATH\Views\Home\history.php(252): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "created_at"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php', 252)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\PediaTopup\\app\\Views\\Home\\history.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('Home/history', [], true)
+ 5 APPPATH\Controllers\Home.php(297): view('Home/history', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:22:35 --> ErrorException: Undefined array key "date"
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 293.
+ 1 APPPATH\Controllers\Home.php(293): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "date"', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 293)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+ERROR - 2025-02-21 17:26:01 --> mysqli_sql_exception: Unknown column 'transaction.id_user' in 'where clause' in C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\PediaTopup\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `transac...', 0)
+#1 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transac...')
+#2 C:\xampp\htdocs\PediaTopup\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transac...')
+#3 C:\xampp\htdocs\PediaTopup\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transac...', Array, false)
+#4 C:\xampp\htdocs\PediaTopup\app\Models\M_Base.php(106): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\PediaTopup\app\Controllers\Home.php(270): App\Models\M_Base->data_join_where('users', 'transaction', 'transaction.id,...', 'users.id = tran...', 'transaction.id_...', '2')
+#6 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+#7 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\PediaTopup\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\PediaTopup\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\PediaTopup\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\PediaTopup\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\PediaTopup\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-02-21 17:26:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'transaction.id_user' in 'where clause'
+[Method: GET, Route: history]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = :transaction.id_user:', [...], false)
+ 2 APPPATH\Models\M_Base.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(270): App\Models\M_Base->data_join_where('users', 'transaction', 'transaction.id, transaction.product_id AS id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '2')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:26:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'transaction.id_user' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = :transaction.id_user:', [...], false)
+ 4 APPPATH\Models\M_Base.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Home.php(270): App\Models\M_Base->data_join_where('users', 'transaction', 'transaction.id, transaction.product_id AS id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '2')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 17:26:01 --> [Caused by] mysqli_sql_exception: Unknown column 'transaction.id_user' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `transaction`.`id`, `transaction`.`product_id` AS `id_product`, `transaction`.`name`, `transaction`.`phone` AS `target`, `transaction`.`product`, `transaction`.`price`, `transaction`.`fee`, `transaction`.`total`, `transaction`.`metode`, `transaction`.`status`, `transaction`.`created_at`, `users`.`id` AS `id_user`, `users`.`email`, `users`.`phone`
+FROM `users`
+JOIN `transaction` ON `users`.`id` = `transaction`.`user_id`
+WHERE `transaction`.`id_user` = :transaction.id_user:', [...], false)
+ 5 APPPATH\Models\M_Base.php(106): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Home.php(270): App\Models\M_Base->data_join_where('users', 'transaction', 'transaction.id, transaction.product_id AS id_product, transaction.name, transaction.phone AS target, transaction.product, transaction.price, transaction.fee, transaction.total, transaction.metode, transaction.status, transaction.created_at, users.id AS id_user, users.email, users.phone', 'users.id = transaction.user_id', 'transaction.id_user', '2')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:08:00 --> ErrorException: Undefined array key 0
+[Method: POST, Route: admin/product/add]
+in APPPATH\Controllers\Admin.php on line 303.
+ 1 APPPATH\Controllers\Admin.php(303): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Admin.php', 303)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->ProductAdd()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:18:19 --> ErrorException: Undefined array key 0
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 270.
+ 1 APPPATH\Controllers\Home.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 270)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:18:53 --> ErrorException: Undefined array key 0
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 270.
+ 1 APPPATH\Controllers\Home.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 270)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:20:25 --> ErrorException: Undefined array key 0
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 270.
+ 1 APPPATH\Controllers\Home.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 270)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:20:27 --> ErrorException: Undefined array key 0
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 270.
+ 1 APPPATH\Controllers\Home.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 270)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:20:47 --> ErrorException: Undefined array key 0
+[Method: GET, Route: history]
+in APPPATH\Controllers\Home.php on line 270.
+ 1 APPPATH\Controllers\Home.php(270): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 270)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->HistoryIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')
+CRITICAL - 2025-02-21 18:20:50 --> ErrorException: session_start(): Ignoring session_start() because a session is already active
+[Method: GET, Route: logout]
+in APPPATH\Controllers\Home.php on line 456.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(8, 'session_start(): Ignoring session_start() because a session is already active', 'C:\\xampp\\htdocs\\PediaTopup\\app\\Controllers\\Home.php', 456)
+ 2 APPPATH\Controllers\Home.php(456): session_start()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->Logout()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\PediaTopup\\public\\index.php')

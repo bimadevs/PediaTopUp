@@ -1,0 +1,499 @@
+@font-face {
+    font-family: 'Tokopedia-Reguler';
+    src: url(../fonts/OpenSauceOne-Regular.woff2);
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Tokopedia-ExtraBold';
+    src: url(../fonts/OpenSauceOne-ExtraBold.woff2);
+}
+html {
+    font-size: 14px;
+    font-family: 'Open Sauce One', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    font-family: 'Tokopedia-Reguler';
+    background-color: #fff;
+}
+
+#Waves {
+    background-image: url('/home/img/waves.png');
+    background-repeat:no-repeat;
+    background-size: 100% 73% !important;
+    height:200px;
+    width:100%;
+}
+
+.title {
+    padding: 5px 24px 0px;
+    max-width: 100%;
+    font-size: 1.4285714285714286rem;
+    line-height: 1.8571428571428572rem;
+    color: var(--N0, #FFFFFF);
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    padding: 0 24px 40px;
+    font-size: 0.8571428571428571rem;
+    line-height: 1.1428571428571428rem;
+    color: var(--N0, #FFFFFF);
+}
+
+.css-bezv71 {
+    min-width: 0;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-right: 0px;
+}
+
+.css-3t6oku {
+    width: 100%;
+    height: 52px;
+    color: #FFFFFF;
+    -webkit-transition: background-color 0.24s ease;
+    transition: background-color 0.24s ease;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: initial;
+    background-color: transparent;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+    width: 100vw;
+}
+
+.unf-navbar__back {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    border: none;
+}
+
+.css-1mgxejs-unf-searchbar {
+    position: relative;
+    margin: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    height: 36px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--NN0, #FFFFFF);
+    border: 1px solid var(--NN200, #D6DFEB);
+    -webkit-transition: margin 0.24s ease;
+    transition: margin 0.24s ease;
+}
+
+.css-11op364 {
+    -webkit-flex: 0 0 16px;
+    -ms-flex: 0 0 16px;
+    flex: 0 0 16px;
+}
+.css-a4zqnd {
+    display: block;
+    border: none !important;
+    width: 100%;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    outline: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--NN950, #212121);
+    padding: 1px 2px !important;
+}
+
+.css-4mt3kr {
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 16px 0px 12px;
+    gap: 8px;
+}
+#carouselExampleIndicators {
+    margin: -25px 10px;
+}
+.css-1l1yr8k {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.css-e40mho {
+    display: inline-block;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    position: relative;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+.css-1tuci21 {
+    width: 100%;
+    height: 109px;
+    padding: 0 4px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.css-1opgw9 {
+    margin: 20px 16px 16px;
+}
+.css-gaf89t-unf-heading {
+    text-align: left;
+    display: block;
+    position: relative;
+    font-weight: 800;
+    font-family: "Open Sauce One", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--NN950, #212121);
+    -webkit-letter-spacing: 0.1px;
+    -moz-letter-spacing: 0.1px;
+    -ms-letter-spacing: 0.1px;
+    letter-spacing: 0.1px;
+    -webkit-text-decoration: initial;
+    text-decoration: initial;
+    margin: 0 0 12px;
+}
+.css-1opgw9 .product {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 20%;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+.css-bqlp8e {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: initial;
+    height: initial;
+    background: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+.css-1w3vjqw.intrinsic {
+    max-width: 100%;
+}
+.css-1w3vjqw {
+    display: block;
+    width: initial;
+    height: initial;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.css-1opgw9 .product .icon_name {
+    font-size: 0.7142857142857143rem;
+    line-height: 1rem;
+    line-height: 16px;
+    text-align: center;
+    margin-top: 8px;
+    color: var(--N700, rgba(49, 53, 59, 0.96));
+    white-space: pre-wrap;
+    word-break: keep-all;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 100%;
+}
+a {
+    color: rgba(0, 0, 0, .7);
+    text-decoration: none;
+}
+.css-1opgw9 .product .icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 6px;
+    background-size: 32px 32px;
+}
+.css-io8lqb {
+    display: block;
+    background: none;
+    width: initial;
+    height: initial;
+    max-width: 100%;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.css-1c345mg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    display: block;
+    padding: 0;
+    margin: auto;
+    border: none;
+    box-sizing: border-box;
+}
+.css-1wb57sx {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.css-1wb57sx .child {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+}
+.css-1cvys1z {
+    --color-shadow: 0 1px 4px 0 rgba(141,150,170,0.4);
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--NN0, #FFFFFF);
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px var(--NN200, #D6DFEB);
+    padding: 50px 8px 0 12px;
+    margin: 0 16px;
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transition-timing-function: cubic-bezier(0.2,0.64,0.21,1);
+    transition-timing-function: cubic-bezier(0.2,0.64,0.21,1);
+    border-radius: 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    height: 60px;
+}
+.css-1cvys1z .left {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.css-bqlp8e {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    width: initial;
+    height: initial;
+    background: none;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.css-1w3vjqw.intrinsic {
+    max-width: 100%;
+}
+.css-1w3vjqw {
+    display: block;
+    width: initial;
+    height: initial;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.css-io8lqb {
+    display: block;
+    background: none;
+    width: initial;
+    height: initial;
+    max-width: 100%;
+    opacity: 1;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.css-1c345mg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    display: block;
+    padding: 0;
+    margin: auto;
+    border: none;
+    box-sizing: border-box;
+}
+.css-1cvys1z .left .content .title {
+    color: var(--NN950, #212121);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 18px;
+    -webkit-letter-spacing: 0.2px;
+    -moz-letter-spacing: 0.2px;
+    -ms-letter-spacing: 0.2px;
+    letter-spacing: 0.2px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.css-1cvys1z .left .content .subtitle {
+    color: var(--NN600, #6D7588);
+    font-size: 12px;
+    line-height: 16px;
+    -webkit-letter-spacing: 0.1px;
+    -moz-letter-spacing: 0.1px;
+    -ms-letter-spacing: 0.1px;
+    letter-spacing: 0.1px;
+}
+.css-1cvys1z > * + * {
+    margin-left: 12px;
+}
+.css-1nkfy0p-unf-btn {
+    background-color: var(--GN500, #00AA5B);
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 0.8571428571428571rem;
+    height: 40px;
+    line-height: 24px;
+    outline: none;
+    position: relative;
+    padding: 0 16px;
+    text-indent: initial;
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+    width: 100%;
+    margin-top: -45px;
+}
+@media only screen and (max-width: 600px) {
+    #Waves {
+        background-image: url('/home/img/waves.png');
+        background-repeat:no-repeat;
+        background-size: 100% 75% !important;
+        height:200px;
+        width:100%;
+    }
+}
+
+#Loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0, 0.7);
+    z-index: 9999;
+    display: block;
+}
+
