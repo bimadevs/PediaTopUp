@@ -45,7 +45,17 @@
 </div>
 <div data-testid=DYNAMIC_ICONS><div class=css-1opgw9><p class="css-gaf89t-unf-heading e12ykf338"color="var(--NN950, #212121)"data-unify=Typography>Isi Ulang</p><?php foreach($category as $catkeys => $cat) : ?><a class=product href="<?= base_url() . "buy/" . $cat['slug'] ?>"><div class="intrinsic css-bqlp8e"><span class="intrinsic css-1w3vjqw"><img alt=""class="icon css-io8lqb"src="data:image/svg+xml,%3csvg
   xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2732%27 height=%2732%27/%3e"aria-hidden=true> </span><img alt="Air PDAM"class="icon css-1c345mg"src="<?= base_url() ?>/home/img/product/<?= $cat['img'] ?>"crossorigin=anonymous decoding=async></div><div class=icon_name><?= $cat['name']?></div></a><?php endforeach ?></div></div>
-<?php $this->endSection(); ?>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <?php foreach($slide as $key => $banner) : ?>
+      <div class="carousel-item <?php if($key == 0) : ?>active<?php endif ?>"> 
+        <img src="<?= base_url() ?>home/img/banner/<?= $banner ?>" class="d-block css-1tuci21">
+      </div>
+      <?php endforeach ?>
+  </div>
+</div>
+  <?php $this->endSection(); ?>
+
 
 <?php $this->section('js'); ?>
 

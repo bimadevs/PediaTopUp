@@ -9,11 +9,6 @@ writable/uploads/*
 !writable/uploads/index.html
 writable/debugbar/*
 
-# Environment files
-.env
-.env.backup
-.env.*.backup
-
 # IDE/Editor files
 .idea/
 .vscode/

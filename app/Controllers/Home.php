@@ -13,12 +13,13 @@ class Home extends BaseController
                 'id'   => $data_loop['id'],
                 'slug' => strtolower(str_replace(" ", "", $data_loop['name'])),
                 'name' => $data_loop['name'],
-				'img'  => $data_loop['icon']
+                'img'  => $data_loop['icon']
             ];
         }
 
         if(isset($_SESSION['phone']) || !empty($_SESSION['phone'])) {
             $CheckUsers = $this->M_Base->data_where('users', 'phone', $_SESSION['phone']);
+            $_SESSION['name'] = $CheckUsers[0]['name']; // Add this line to set user's name in session
 
             $data = array_merge($this->base_data, [
                 'title' => $this->M_Base->u_get('web-title'),
@@ -85,6 +86,7 @@ class Home extends BaseController
                     return redirect()->to('/login');
                 } else {
                     $this->session->set('phone', $CheckUsers[0]['phone']);
+                    $this->session->set('name', $CheckUsers[0]['name']); // Add this line
                     return redirect()->to('/');
                 }
             }

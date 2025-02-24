@@ -67,9 +67,25 @@
                   </nav>
               </div>
             <?php endif ?>
-            
+            <div class="text-center mt-2">
+                <?php if(isset($_SESSION['phone'])) : ?>
+                    <span 
+                    style="
+                    font-size: 14px; 
+                    color:#ffe500;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    ">Welcome, <?= $users['name'] ?></span>
+                <?php else : ?>
+                    <a href="<?= base_url() ?>login" style="font-size: 14px; 
+                    color:#ffe500;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;">Login</a>
+                <?php endif ?>
+            </div>
         </div>
-
           <?php $this->renderSection('konten'); ?>
         </div>
       </div>
