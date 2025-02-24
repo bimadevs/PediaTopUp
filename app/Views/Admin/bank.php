@@ -15,7 +15,10 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" id="AddModal" data-bs-target="#exampleModal"><i class="mdi mdi-plus"></i> Tambah Bank</button>
+                    <div class="d-flex gap-2 mb-3">
+                      <button class="btn btn-primary" type="button" data-bs-toggle="modal" id="AddModal" data-bs-target="#exampleModal"><i class="mdi mdi-plus"></i> Tambah Bank</button>
+                      <button class="btn btn-success" type="button" data-bs-toggle="modal" id="AddQrisModal" data-bs-target="#exampleModal"><i class="mdi mdi-qrcode"></i> Tambah QRIS</button>
+                    </div>
                     <div class="table-responsive-lg">
                     <table id="myTable" class="table table-striped nowrap" style="width: 100%;">
                       <thead>
@@ -149,8 +152,24 @@
     $("#blah").removeClass('d-block');
     $("#blah").addClass('d-none');
   });
+  $("body").on('click', 'button#AddQrisModal', function() {
+    $("#exampleModalLabel").html('Tambah QRIS Baru');
+    $("form.forms-sample").attr('action', '/admin/bank/add');
+    $("#icon").attr('required', true);
 
-  $("body").on('click', 'a.btn-info', function () {
+    $("#id").val('')
+    $("#name").val('QRIS');
+    $("#number").val('QRIS');
+    $("#behalf").val('Pedia Store');
+    $("#min").val('');
+    $("#icon").val('');
+    $(".iconErr").addClass('d-none');
+    $("#status").val('1').change();
+    $("#blah").attr('src', '');
+    $("#blah").removeClass('d-block');
+    $("#blah").addClass('d-none');
+  });
+  $("body").on('a.btn-info', function () {
     $("#exampleModalLabel").html('Edit Data Bank');
     $("#icon").attr('required', false);
     $Data = jQuery.parseJSON($(this).attr('data-id'));

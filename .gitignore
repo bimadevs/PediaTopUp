@@ -1,0 +1,51 @@
+# CodeIgniter 4 specific
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+writable/debugbar/*
+
+# Environment files
+.env
+.env.backup
+.env.*.backup
+
+# IDE/Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+nbproject/
+
+# Composer
+vendor/
+composer.lock
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (if using npm/yarn)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Testing
+phpunit.xml
+.phpunit.result.cache
+tests/coverage*
+
+# Misc
+*.log
+*.zip
+*.rar
+*.tar
+*.gz
+*.7z

@@ -51,7 +51,7 @@
               <?php endif ?>
               <div class="title">Beli <span style="color:#ffe500;">produk digital</span> di <?= $title ?></div>
               <div class="subtitle">Mulai dari pulsa, paket data, sampai bayar pajak</div>
-            <?php else : ?>
+              <?php else : ?>
               <div id="Waves">
                   <nav class="navbar navbar-light bg-none pt-1 pb-1 p-0">
                       <a href="/" class="unf-navbar__back" aria-label="kembali ke laman sebelumnya"><svg class="unf-icon" viewBox="0 0 24 24" width="24" height="24" fill="#FFFFFF" style="display: inline-block; vertical-align: middle;"><path d="M20 11.25H4.78l5.73-5.72a.77.77 0 0 0 0-1.07.75.75 0 0 0-1.06 0l-7.1 7.1a.77.77 0 0 0 0 1.07l7.1 7.1a.75.75 0 0 0 1.06 0 .77.77 0 0 0 0-1.07l-5.92-5.91H20a.75.75 0 1 0 0-1.5Z"></path></svg></a>

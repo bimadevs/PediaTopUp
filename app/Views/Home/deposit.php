@@ -212,7 +212,7 @@
                             <div class="form-group mt-3 px-4">
                                 <label for="bank" class="form-label">Bank Pilihan</label>
                                 <div class="input-group">
-                                    <span class="input-group-text bg-none border-none"><img id="bank_icon" src="<?= base_url() ?>home/img/bank/<?= $bank[0]['icon'] ?>" width="48" alt=""></span>
+                                    <span class="input-group-text bg-none border-none"><img id="bank_icon" src="<?= base_url() ?>home/img/bank/<?= $bank[0]['icon'] ?>" width="26" alt=""></span>
                                     <select class="form-control" name="bank" id="bank" required>
                                         <?php foreach($bank as $key => $b) : ?>
                                             <option value="<?= $b['id'] ?>" <?php if($key == 0) : ?> selected <?php endif ?> data-id="<?= $b['icon'] ?>"><?= $b['name'] ?></option>

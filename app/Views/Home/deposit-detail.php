@@ -256,6 +256,9 @@
                         </div>
                         <div class="col-12 mt-4 mb-3 px-6">
                             <label style="font-size: 13px;">Transfer ke rekening <strong><?= $bank['name'] . " " . $bank['number'] . "</strong> A/N <strong>" . $bank['behalf'] ?></strong></label>
+                            <div class="mt-2 text-center">
+                                <img src="<?= base_url() ?>home/img/bank/<?= $bank['icon'] ?>" alt="<?= $bank['name'] ?>" style="width: 150px !important; height: auto !important; border-radius: 0 !important;">
+                            </div>
                         </div>
                     <?php elseif($deposits['status'] == "approved") : ?>
                     <div class="col-12" style="padding: 14px 30px;">
