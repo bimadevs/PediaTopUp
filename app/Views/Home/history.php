@@ -228,6 +228,69 @@
         a.selectNominal:hover {
             color: #000 !important;
         }
+
+        .close-btn {
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: #888;
+            margin-left: 5px;
+            position: relative;
+            top: -2px;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-pending {
+            background-color: #FFF3CD;
+            color: #856404;
+        }
+
+        .status-success {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+
+        .status-failed {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+
+        .history-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .history-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 5px;
+        }
+
+        .history-date {
+            font-size: 12px;
+            color: #757575;
+            margin-bottom: 8px;
+        }
+
+        .history-amount {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2E2E2E;
+        }
     </style>
 <?php $this->endSection(); ?>
 <?php $this->section('konten'); ?>
@@ -237,44 +300,63 @@
         <div class="col-12" id="PhoneOrder">
             <div class="box-white bg-white shadow">
                 <div class="row mb-3 px-3 mt-2">
-                    <div class="col-6 mt-2">
-                        <a class="btn d-block border mx-auto btn-active" href="javascript:void(0);" id="Transaction">Riwayat Order</a>
-                    </div>
-                    <div class="col-6 mt-2">
-                        <a class="btn d-block border mx-auto" href="javascript:void(0);" id="Deposit">Riwayat Deposit</a>
+                    <div class="col-12 mt-3">
+                        <div class="btn-group d-block mx-auto text-center">
+                            <button class="btn btn-active" id="Transaction">Transaksi</button>
+                            <button class="btn" id="Deposit">Deposit</button>
+                            <button class="btn" id="Withdrawal">Penarikan</button>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row px-3 mt-3 mb-3">
                     <div class="col-12" id="ShowTransaction">
-                        <?php foreach($Transactions as $key => $t) : ?>
-                            <a href="<?= base_url() ?>order/detail/<?= $t['id'] ?>" class="selectNominal shadow-sm px-3 pb-3 text-left">
-                            
-                            <img src="<?= base_url() ?>home/img/product/<?= $t['category']['icon'] ?>" class="d-inline-block ml-0" width="43" alt="" style="border-radius: 48px;">
-                            <div class="description d-inline-block ml-2">
-                                <b><?= $t['product']['name'] ?></b>
-                                <p><?= date('d M Y H:i', strtotime($t['date'])); ?></p>
-                            </div>
-                            <div class="description float-right mr-2">
-                                <!-- <small class="badge badge-success font-weight-bold badge-check rounded"><i class="zmdi zmdi-check"></i></small> -->
-                            </div>
-                        </a>
+                        <?php foreach($Transaction as $key => $t) : ?>
+                            <a href="<?= base_url() ?>order/detail/<?= $t['id'] ?>" class="text-decoration-none">
+                                <div class="history-item">
+                                    <div class="history-title"><?= $t['product'] ?></div>
+                                    <div class="history-date"><?= date('d M Y H:i', strtotime($t['date'])) ?></div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="history-amount"><?= $curr ?> <?= number_format($t['price'], 0, ',', '.') ?></div>
+                                        <div class="status-badge <?= $t['status'] == 'pending' ? 'status-pending' : ($t['status'] == 'success' ? 'status-success' : 'status-failed') ?>">
+                                            <?= ucfirst($t['status']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         <?php endforeach ?>
-                        
                     </div>
                     <div class="col-12 d-none" id="ShowDeposit">
                         <?php foreach($Deposits as $key => $d) : ?>
-                            <a href="<?= base_url() ?>deposit/detail/<?= $d['id'] ?>" class="selectNominal shadow-sm px-3 pb-3 text-left">
-                            
-                            <img src="<?= base_url() ?>home/img/bank/<?= $d['icon'] ?>" class="d-inline-block ml-0" width="43" alt="">
-                            <div class="description d-inline-block ml-3">
-                                <b>Deposit <?= $curr . " " .number_format($d['total'], 0, ",", "."); ?></b>
-                                <p><?= date('d M Y H:i', strtotime($d['date'])); ?></p>
-                            </div>
-                            <div class="description float-right mr-2">
-                                <!-- <small class="badge badge-success font-weight-bold badge-check rounded"><i class="zmdi zmdi-check"></i></small> -->
-                            </div>
-                        </a>
+                            <a href="<?= base_url() ?>deposit/detail/<?= $d['id'] ?>" class="text-decoration-none">
+                                <div class="history-item">
+                                    <div class="history-title">Deposit <?= $curr . " " .number_format($d['total'], 0, ",", ".") ?></div>
+                                    <div class="history-date"><?= date('d M Y H:i', strtotime($d['date'])) ?></div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="history-amount"><?= $curr ?> <?= number_format($d['total'], 0, ',', '.') ?></div>
+                                        <div class="status-badge <?= $d['status'] == 'pending' ? 'status-pending' : ($d['status'] == 'approved' ? 'status-success' : 'status-failed') ?>">
+                                            <?= ucfirst($d['status']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        <?php endforeach ?>
+                    </div>
+                    
+                    <div class="col-12 d-none" id="ShowWithdrawal">
+                        <?php foreach($Withdrawals as $key => $w) : ?>
+                            <a href="<?= base_url() ?>withdrawal/detail/<?= $w['id'] ?>" class="text-decoration-none">
+                                <div class="history-item">
+                                    <div class="history-title">Penarikan <?= $curr . " " .number_format($w['total'] + $w['fee'], 0, ",", ".") ?></div>
+                                    <div class="history-date"><?= date('d M Y H:i', strtotime($w['date'])) ?></div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="history-amount"><?= $curr ?> <?= number_format($w['total'] + $w['fee'], 0, ',', '.') ?></div>
+                                        <div class="status-badge <?= $w['status'] == 'pending' ? 'status-pending' : ($w['status'] == 'approved' ? 'status-success' : 'status-failed') ?>">
+                                            <?= ucfirst($w['status']) ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         <?php endforeach ?>
                     </div>
                 </div>
@@ -291,15 +373,64 @@
         $("#Transaction").on('click', function() {
             $(this).addClass('btn-active');
             $("#Deposit").removeClass('btn-active');
+            $("#Withdrawal").removeClass('btn-active');
             $("#ShowTransaction").removeClass('d-none');
             $("#ShowDeposit").addClass('d-none');
+            $("#ShowWithdrawal").addClass('d-none');
         });
 
         $("#Deposit").on('click', function() {
             $(this).addClass('btn-active');
             $("#Transaction").removeClass('btn-active');
+            $("#Withdrawal").removeClass('btn-active');
             $("#ShowDeposit").removeClass('d-none');
             $("#ShowTransaction").addClass('d-none');
+            $("#ShowWithdrawal").addClass('d-none');
+        });
+
+        $("#Withdrawal").on('click', function() {
+            $(this).addClass('btn-active');
+            $("#Transaction").removeClass('btn-active');
+            $("#Deposit").removeClass('btn-active');
+            $("#ShowWithdrawal").removeClass('d-none');
+            $("#ShowTransaction").addClass('d-none');
+            $("#ShowDeposit").addClass('d-none');
+        });
+
+        // Menangani klik pada tombol tutup (x)
+        $(document).on('click', '.close-btn', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            var id = $(this).data('id');
+            var type = $(this).data('type');
+            
+            // Konfirmasi sebelum menghapus
+            if (confirm('Apakah Anda yakin ingin menghapus notifikasi ini?')) {
+                // Kirim permintaan AJAX untuk menghapus notifikasi
+                $.ajax({
+                    url: '<?= base_url() ?>remove-notification',
+                    type: 'POST',
+                    data: {
+                        id: id,
+                        type: type,
+                        <?= csrf_token() ?>: '<?= csrf_hash() ?>'
+                    },
+                    success: function(response) {
+                        // Jika berhasil, hapus elemen dari DOM
+                        if (response.success) {
+                            $(e.target).closest('.selectNominal').fadeOut(300, function() {
+                                $(this).remove();
+                            });
+                        } else {
+                            alert('Gagal menghapus notifikasi: ' + response.message);
+                        }
+                    },
+                    error: function() {
+                        alert('Terjadi kesalahan saat menghapus notifikasi');
+                    }
+                });
+            }
         });
 
         $("form#FormDeposit").on('submit', function() {

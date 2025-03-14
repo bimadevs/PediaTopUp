@@ -15,6 +15,12 @@ $routes->get('/deposit', 'Home::DepositIndex');
 $routes->post('/deposit', 'Home::DepositCreate');
 $routes->get('/deposit/detail/(:any)', 'Home::DepositDetail/$1');
 
+// Routes for Withdrawal
+$routes->get('/withdrawal', 'Home::WithdrawalIndex');
+$routes->post('/withdrawal', 'Home::WithdrawalCreate');
+$routes->get('/withdrawal/detail/(:any)', 'Home::WithdrawalDetail/$1');
+$routes->post('/remove-notification', 'Home::removeNotification');
+
 $routes->get('/history', 'Home::HistoryIndex');
 
 // Routes for Login and Register
@@ -52,12 +58,45 @@ $routes->post('/admin/bank/add', 'Admin::BankAdd');
 $routes->post('/admin/bank/edit', 'Admin::BankEdit');
 $routes->get('/admin/bank/delete/(:any)', 'Admin::BankDelete/$1');
 
+// Routes For Bank Withdrawal Data
+$routes->get('/admin/bank/withdrawal', 'Admin::BankWithdrawalIndex');
+$routes->post('/admin/bank/withdrawal/add', 'Admin::BankWithdrawalAdd');
+$routes->post('/admin/bank/withdrawal/edit', 'Admin::BankWithdrawalEdit');
+$routes->get('/admin/bank/withdrawal/delete/(:any)', 'Admin::BankWithdrawalDelete/$1');
+
 // Routes For Deposit Data
 $routes->get('/admin/deposit', 'Admin::DepositIndex');
 $routes->post('/admin/deposit/update', 'Admin::EditDeposit');
 
+// Routes For Deposit Amount Data
+$routes->get('/admin/deposit/amount', 'Admin::DepositAmountIndex');
+$routes->post('/admin/deposit/amount/add', 'Admin::DepositAmountAdd');
+$routes->post('/admin/deposit/amount/edit', 'Admin::DepositAmountEdit');
+$routes->get('/admin/deposit/amount/delete/(:any)', 'Admin::DepositAmountDelete/$1');
+
+// Routes For Withdrawal Data
+$routes->get('/admin/withdrawal', 'Admin::WithdrawalIndex');
+$routes->post('/admin/withdrawal/edit', 'Admin::EditWithdrawal');
+
+// Routes For Withdrawal Amount Data
+$routes->get('/admin/withdrawal/amount', 'Admin::WithdrawalAmountIndex');
+$routes->post('/admin/withdrawal/amount/add', 'Admin::WithdrawalAmountAdd');
+$routes->post('/admin/withdrawal/amount/edit', 'Admin::WithdrawalAmountEdit');
+$routes->get('/admin/withdrawal/amount/delete/(:any)', 'Admin::WithdrawalAmountDelete/$1');
+
+// Routes For Transaction Data
 $routes->get('/admin/transaction', 'Admin::TransactionIndex');
+$routes->post('/admin/transaction/update', 'Admin::TransactionUpdate');
+
+// Routes For Notification Data
+$routes->get('/admin/notification', 'Admin::NotificationIndex');
+$routes->post('/admin/notification/add', 'Admin::NotificationAdd');
+$routes->get('/admin/notification/delete/(:any)', 'Admin::NotificationDelete/$1');
 
 // Routes for Settings
 $routes->get('/admin/settings', 'Admin::SettingsIndex');
 $routes->post('/admin/settings/update', 'Admin::SettingsUpdate');
+$routes->get('/admin/add-fee-withdrawal', 'Admin::AddFeeWithdrawal');
+
+// Routes for Change Password 
+$routes->post('/admin/change-password', 'Admin::changePassword');

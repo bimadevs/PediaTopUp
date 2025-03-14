@@ -16,7 +16,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive-lg">
-                    <table id="myTable" class="table table-striped nowrap" style="width: 100%;">
+                    <table id="TransactionTable" class="table table-striped nowrap" style="width: 100%;">
                       <thead>
                         <tr>
                           <th>No.Invoice</th>
@@ -50,8 +50,8 @@
                               <?php endif ?>
                             </td>
                             <td>
-                            <?php if($u['status'] == "Pending" || $u['status'] == "Processing") : ?>
-                                <a href="javascript:void(0);" class="btn btn-sm btn-info" type="button" id="EditModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id='<?= json_encode(array('id' => '' . $u['id'] . '')) ?>'><i class="mdi mdi-pencil"></i></a>
+                            <?php if($u['status'] == "Pending" || $u['status'] == "Processing" || $u['status'] == "Canceled") : ?>
+                                <a href="javascript:void(0);" class="btn btn-sm btn-info" type="button" id="EditModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id='<?= json_encode(array('id' => '' . $u['id'] . '', 'status' => '' . $u['status'] . '')) ?>'><i class="mdi mdi-pencil"></i></a>
                             <?php else : ?>
                                 <button href="javascript:void(0);" class="btn btn-sm btn-info disabled" disabled><i class="mdi mdi-pencil"></i></button>
                             <?php endif ?>
@@ -67,28 +67,24 @@
               </div>
 
               <!-- Modal -->
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ubah status deposit</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ubah status Transaksi</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="/admin/deposit/update" class="forms-sample" method="POST">
+      <form action="/admin/transaction/update" class="forms-sample" method="POST">
         <?= csrf_field() ?>
         <input type="hidden" name="id" id="id">
         <div class="modal-body">
           <div class="form-group">
-            <label for="">Status Deposit</label>
+            <label for="">Status Transaction</label>
             <select name="status" id="status" class="form-control p-3" required>
-                <option value="0" selected disabled>- Pilih Status -</option>
-                <option value="approved">Disetujui</option>
-                <option value="declined">Ditolak</option>
+                <option value="Processing" selected disabled>- Pilih Status -</option>
+                <option value="Completed">Disetujui</option>
+                <option value="Canceled">Ditolak</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label for="">Catatan untuk pengguna</label>
-            <textarea name="note" id="note" class="form-control" rows="7"></textarea>
           </div>
         </div>
         <div class="modal-footer">
@@ -99,18 +95,25 @@
       
     </div>
   </div>
-</div> -->
+</div>
 <?php $this->endSection(); ?>
 <?php $this->section('js'); ?>
+<script>
+      let table = new DataTable('#TransactionTable', {
+          responsive: true,
+          ordering: false,
+          "bLengthChange": false,
+      });
+    </script>
 <script>
   $("body").on('click', 'a#EditModal', function () {
     $Data = jQuery.parseJSON($(this).attr('data-id'));
 
-    $("#exampleModalLabel").html('Ubah Status Deposit #' + $Data.id);
-    $("form.forms-sample").attr('action', '/admin/deposit/update');
+    $("#exampleModalLabel").html('Ubah Status Transaksi #' + $Data.id);
+    $("form.forms-sample").attr('action', '/admin/transaction/update');
 
     $("#id").val($Data.id)
-    $("#status").val('0').change();
+    $("#status").val($Data.status).change();
   })
 </script>
 <?php $this->endSection(); ?>

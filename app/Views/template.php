@@ -4,23 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title" content="<?= $title ?>" />
-    <meta name="description" content="<?= $description ?>" />
+    <meta name="description" content="<?= isset($description) ? $description : $title ?>" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="<?= base_url() ?>" />
     <meta property="og:title" content="<?= $title ?>" />
-    <meta property="og:description" content="<?= $description ?>" />
-    <meta property="og:image" content="" />
+    <meta property="og:description" content="<?= isset($description) ? $description : $title ?>" />
+    <meta property="og:image" content="https://pediatopup.com/home/img/banner/1740544512_2b060ccc6c01a96dd822.jpg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="<?= base_url() ?>home/css/custom.css">
     <link rel="stylesheet" href="<?= base_url() ?>home/css/loading.css">
-    <link rel="shorcut icon" href="<?= base_url() ?>home/img/<?= $icon ?>">
+    <link rel="shorcut icon" href="<?= base_url() ?>home/img/<?= $web['icon'] ?>">
     <?php $this->renderSection('css'); ?>
     <title><?= $title . " - " . $uri_segment ?></title>
+    <style>
+        @media only screen and (max-width: 360px) {
+            .css-1nkfy0p-unf-btn {
+                font-family: 'Tokopedia-Reguler' !important;
+                font-size: 10px !important;
+            }
+        }
+    </style>
   </head>
   <body>
   <div id="Loading" class="d-none">
@@ -33,7 +41,7 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters m-0 p-0">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 d-block mx-auto m-0 p-0">
-        <div id="Waves">
+          <div id="Waves">
             <?php if($uri_segment == "Home") : ?>
               <?php if(isset($_SESSION['phone'])) : ?>
               <nav class="navbar navbar-light bg-none pt-1 pb-1 p-0">
@@ -51,7 +59,7 @@
               <?php endif ?>
               <div class="title">Beli <span style="color:#ffe500;">produk digital</span> di <?= $title ?></div>
               <div class="subtitle">Mulai dari pulsa, paket data, sampai bayar pajak</div>
-              <?php else : ?>
+            <?php else : ?>
               <div id="Waves">
                   <nav class="navbar navbar-light bg-none pt-1 pb-1 p-0">
                       <a href="/" class="unf-navbar__back" aria-label="kembali ke laman sebelumnya"><svg class="unf-icon" viewBox="0 0 24 24" width="24" height="24" fill="#FFFFFF" style="display: inline-block; vertical-align: middle;"><path d="M20 11.25H4.78l5.73-5.72a.77.77 0 0 0 0-1.07.75.75 0 0 0-1.06 0l-7.1 7.1a.77.77 0 0 0 0 1.07l7.1 7.1a.75.75 0 0 0 1.06 0 .77.77 0 0 0 0-1.07l-5.92-5.91H20a.75.75 0 1 0 0-1.5Z"></path></svg></a>
@@ -67,26 +75,16 @@
                   </nav>
               </div>
             <?php endif ?>
-            <div class="text-center mt-2">
-                <?php if(isset($_SESSION['phone'])) : ?>
-                    <span 
-                    style="
-                    font-size: 14px; 
-                    color:#ffe500;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    ">Welcome, <?= $users['name'] ?></span>
-                <?php else : ?>
-                    <a href="<?= base_url() ?>login" style="font-size: 14px; 
-                    color:#ffe500;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;">Login</a>
-                <?php endif ?>
-            </div>
+            
         </div>
+
           <?php $this->renderSection('konten'); ?>
+          
+          <?php if($uri_segment == "Home") : ?>
+            <div class="col-12 px-3">
+              <img src="<?= base_url() ?>home/img/footer.png" class="img-fluid d-block mx-auto mt-5" style="max-width: 100%; height: auto;">
+            </div>
+          <?php endif ?>
         </div>
       </div>
     </div>

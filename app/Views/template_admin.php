@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,6 +17,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.4/css/responsive.bootstrap5.css">
+    
+    <!-- jQuery dan Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -160,20 +162,65 @@
             </li>
             <li class="nav-item <?php if($uri_segment == "bank") : ?> active <?php endif ?>">
               <a class="nav-link" href="<?= base_url(); ?>admin/bank">
-                <span class="menu-title">Bank Admin</span>
+                <span class="menu-title">Bank Deposit</span>
                 <i class="mdi mdi-bank menu-icon"></i>
               </a>
             </li>
+            
+            <li class="nav-item <?php if($uri_segment == "bank_withdrawal") : ?> active <?php endif ?>">
+              <a class="nav-link" href="<?= base_url(); ?>admin/bank/withdrawal">
+                <span class="menu-title">Bank Penarikan</span>
+                <i class="mdi mdi-bank-transfer menu-icon"></i>
+              </a>
+            </li>
+            
             <li class="nav-item <?php if($uri_segment == "deposit") : ?> active <?php endif ?>">
-              <a class="nav-link" href="<?= base_url(); ?>admin/deposit">
+              <a class="nav-link" data-bs-toggle="collapse" href="#deposit" aria-expanded="false" aria-controls="icons">
                 <span class="menu-title">Deposit</span>
                 <i class="mdi mdi-cash-multiple menu-icon"></i>
               </a>
+              <div class="collapse" id="deposit">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>admin/deposit">List Deposit</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>admin/deposit/amount">Nominal Deposit</a>
+                  </li>
+                </ul>
+              </div>
             </li>
+            
+            <li class="nav-item <?php if($uri_segment == "withdrawal" || $uri_segment == "withdrawal_amount") : ?> active <?php endif ?>">
+              <a class="nav-link" data-bs-toggle="collapse" href="#withdrawal" aria-expanded="false" aria-controls="icons">
+                <span class="menu-title">Penarikan Saldo</span>
+                <?php if(isset($pending_withdrawals) && $pending_withdrawals > 0): ?>
+                <span class="badge badge-warning"><?= $pending_withdrawals ?></span>
+                <?php endif; ?>
+                <i class="mdi mdi-cash-refund menu-icon"></i>
+              </a>
+              <div class="collapse" id="withdrawal">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>admin/withdrawal">List Penarikan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url() ?>admin/withdrawal/amount">Nominal Penarikan</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            
             <li class="nav-item <?php if($uri_segment == "transaction") : ?> active <?php endif ?>">
               <a class="nav-link" href="<?= base_url(); ?>admin/transaction">
                 <span class="menu-title">Transaksi</span>
                 <i class="mdi mdi-chart-bar menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item <?php if($uri_segment == "notification") : ?> active <?php endif ?>">
+              <a class="nav-link" href="<?= base_url(); ?>admin/notification">
+                <span class="menu-title">Notifikasi</span>
+                <i class="mdi mdi-margin menu-icon"></i>
               </a>
             </li>
             <li class="nav-item <?php if($uri_segment == "voucher") : ?> active <?php endif ?>">
@@ -238,6 +285,7 @@
     <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.4/js/responsive.bootstrap5.js"></script>
+     <script src="https://cdn.datatables.net/plug-ins/1.10.25/sorting/datetime-moment.js"></script>
     <?php $this->renderSection('js'); ?>
     <!-- endinject -->
     <!-- Custom js for this page -->

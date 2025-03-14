@@ -42,6 +42,18 @@ body {
     color: var(--N0, #FFFFFF);
 }
 
+.cs-wa {
+    position: fixed;
+    bottom: 65px; 
+    right: 20px;
+    z-index: 1000; 
+}
+
+.cs-wa img {
+    width: 90px; 
+    height: auto;     
+}
+        
 .css-bezv71 {
     min-width: 0;
     -webkit-flex: 1;

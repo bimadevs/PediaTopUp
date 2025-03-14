@@ -218,11 +218,8 @@
                 <div class="row">
                 <?php if (session('deposit_success') || $deposits['status'] == "pending"): ?>
                     <div class="col-12 mt-3 px-6">
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <i class="fas fa-check-circle mr-1"></i> <strong>Gotcha!</strong> Permintaan Deposit berhasil dibuat.
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <div class="alert alert-success" role="alert">
+                            <i class="fas fa-check-circle mr-1"></i> <strong>Gotcha!</strong> Permintaan deposit berhasil dibuat.
                         </div>
                     </div>
                 <?php endif ?>
@@ -239,25 +236,41 @@
                 <?php endif ?>
 
                     <?php if($deposits['status'] == "pending") : ?>
+                        <?php if ($bank_payment == "-" || $bank_payment == null)  : ?>
+                        <div class="col-12 mt-4 mb-3 px-6">
+                            <label style="font-size: 13px;">Transfer ke rekening <strong><?= $bank_name . " " . $bank_numb . "</strong> A/N <strong>" . $bank_beha ?></strong></label>
+                        </div>
+                        <?php else : ?>
+                        <div class="col-12 mt-4 mb-3 px-6">
+                            <label style="font-size: 13px;">Transfer ke rekening <strong><?= $bank_name . "</strong> A/N <strong>" . $bank_beha ?></strong></label>
+                            <img class="d-block mx-auto w-100" src="<?= base_url() ?>home/img/bank/<?= $bank_payment ?>">
+                        </div>
+                        <?php endif ?>
                         <div class="col-12 mt-2 px-6">
+                            <label style="font-size: 13px;">Detail deposit: </label>
+                            <div class="boxtime d-block mx-auto w-100 mt-3 p-3 shadow-sm rounded">
+                                <strong>Total</strong> <small>*Jumlah yang harus dibayar</small>
+                                <div class="detail-deposit d-block mx-auto mt-2 text-danger font-weight-bold"><?= $curr . " " .number_format($deposits['total'], 0, ",", "."); ?></div>
+                            </div>
+                        </div>
+                        
+                        <?php if(isset($deposits['bonus']) && $deposits['bonus'] > 0) : ?>
+                        <div class="col-12 mt-3 px-6">
+                            <label style="font-size: 13px;">Saldo yang kamu dapat: </label>
+                            <div class="boxtime d-block mx-auto w-100 mt-3 p-3 shadow-sm rounded">
+                                <strong>Total Saldo</strong> <small>*Saldo yang kamu dapat</small>
+                                <div class="detail-deposit d-block mx-auto mt-2 text-danger font-weight-bold"><?= $curr . " " .number_format($deposits['total']+$deposits['bonus'], 0, ",", "."); ?></div>
+                            </div>
+                        </div>
+                        <?php endif ?>
+                        
+                        
+                        
+                        <div class="col-12 mt-3 mb-4 px-6">
                             <label style="font-size: 13px;">Segera lakukan pembayaran sebelum: </label>
                             <div class="boxtime d-block mx-auto w-100 mt-3 p-3 shadow-sm rounded">
                                 <strong>Batas waktu pembayaran</strong>
-                                <div class="detail-deposit d-block mx-auto mt-2 text-danger font-weight-bold"><?= date('d F Y H:i:s', strtotime($deposits['updated_at']));?></div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 mt-4 px-6">
-                            <label style="font-size: 13px;">Segera lakukan pembayaran sebesar: </label>
-                            <div class="boxtime d-block mx-auto w-100 mt-3 p-3 shadow-sm rounded">
-                                <strong>Total</strong> <small>*Jumlah yang harus dibayar</small>
-                                <div class="detail-deposit d-block mx-auto mt-2 text-danger font-weight-bold"><?= $curr . " " .number_format($deposits['total']+$deposits['uniq'], 0, ",", "."); ?></div>
-                            </div>
-                        </div>
-                        <div class="col-12 mt-4 mb-3 px-6">
-                            <label style="font-size: 13px;">Transfer ke rekening <strong><?= $bank['name'] . " " . $bank['number'] . "</strong> A/N <strong>" . $bank['behalf'] ?></strong></label>
-                            <div class="mt-2 text-center">
-                                <img src="<?= base_url() ?>home/img/bank/<?= $bank['icon'] ?>" alt="<?= $bank['name'] ?>" style="width: 150px !important; height: auto !important; border-radius: 0 !important;">
+                                <div class="detail-deposit d-block mx-auto mt-2 text-danger font-weight-bold"><?= $expiredDate . date(' H:i:s', strtotime($deposits['updated_at'])); ?></div>
                             </div>
                         </div>
                     <?php elseif($deposits['status'] == "approved") : ?>
@@ -274,7 +287,7 @@
                         <div class="row">
                             <div class="col-6" style="border-right: 1px solid rgba(0, 0, 0, .1);">
                                 <span class="css-c1gsx8 text-center">Tanggal Deposit</span>
-                                <p class="font-weight-bold text-center" style="margin-top: -5px; font-size: 11px;"><?= date('d M Y H:i:s', strtotime($deposits['created_at']));?></p>
+                                <p class="font-weight-bold text-center" style="margin-top: -5px; font-size: 11px;"><?= $date . date(' H:i:s', strtotime($deposits['created_at'])) ?></p>
                             </div>
                             <div class="col-6">
                                 <span class="css-c1gsx8 text-center">No.Invoice</span>
@@ -287,9 +300,9 @@
                     </div>
                     <div class="col-12" style="padding: 0 30px;">
                         <span class="css-c1gsx8">Metode Pembayaran</span>
-                        <img src="<?= base_url() ?>home/img/bank/<?= $bank['icon'] ?>" class="my-2" width="55" alt="">
+                        <img src="<?= base_url() ?>home/img/bank/<?= $bank_icon ?>" class="my-2" width="55" alt="">
                         <br>
-                        <small><strong><?= $bank['name'] . " " . $bank['number'] . "</strong> A/N <strong>" . $bank['behalf'] ?></strong></small>
+                        <small><strong><?= $bank_name . " " . $bank_numb . "</strong> A/N <strong>" . $bank_beha ?></strong></small>
                     </div>
                     <div class="col-12">
                         <hr>
@@ -319,7 +332,7 @@
                         <div class="row">
                             <div class="col-6" style="border-right: 1px solid rgba(0, 0, 0, .1);">
                                 <span class="css-c1gsx8 text-center">Tanggal Deposit</span>
-                                <p class="font-weight-bold text-center" style="margin-top: -5px; font-size: 11px;"><?= date('d M Y H:i:s', strtotime($deposits['created_at']));?></p>
+                                <p class="font-weight-bold text-center" style="margin-top: -5px; font-size: 11px;"><?= $date . date(' H:i:s', strtotime($deposits['created_at'])) ?></p>
                             </div>
                             <div class="col-6">
                                 <span class="css-c1gsx8 text-center">No.Invoice</span>
@@ -332,9 +345,9 @@
                     </div>
                     <div class="col-12" style="padding: 0 30px;">
                         <span class="css-c1gsx8">Metode Pembayaran</span>
-                        <img src="<?= base_url() ?>home/img/bank/<?= $bank['icon'] ?>" class="my-2" width="55" alt="">
+                        <img src="<?= base_url() ?>home/img/bank/<?= $bank_icon ?>" class="my-2" width="55" alt="">
                         <br>
-                        <small><strong><?= $bank['name'] . " " . $bank['number'] . "</strong> A/N <strong>" . $bank['behalf'] ?></strong></small>
+                        <small><strong><?= $bank_name . " " . $bank_numb . "</strong> A/N <strong>" . $bank_beha ?></strong></small>
                     </div>
                     <div class="col-12">
                         <hr>

@@ -215,13 +215,13 @@
                     <div class="col-6 mt-3">
                         <?php if($p['stock'] == 0) : ?>
                             <div class="box-white box-product p-3 shadow-sm disabled" disabled>
-                                <span class="product-name"><?= strtoupper($p['slug']) . " " . number_format($p['price'], 0, ",", ".") ?></span>
+                                <span class="product-name"><?= $p['name'] ?></span>
                                 <span class="prices mt-1"><?= $curr . " ".number_format($p['price'], 0, ",", "."); ?></span>
                                 <small class="badge badge-danger" style="position: absolute; bottom: 0px; right: 0;">Stok Habis</small>
                             </div>
                         <?php else : ?>
                             <div class="box-white box-product p-3 shadow-sm" id="chooseProduct" data-id="<?= $p['id'] ?>" data-total="<?= $curr . " ".number_format($p['price']+$fee, 0, ",", "."); ?>">
-                                <span class="product-name"><?= strtoupper($p['slug']) . " " . number_format($p['price'], 0, ",", ".") ?></span>
+                                <span class="product-name"><?= $p['name'] ?></span>
                                 <span class="prices mt-1"><?= $curr . " ".number_format($p['price'], 0, ",", "."); ?></span>
                             </div>
                         <?php endif ?>
@@ -270,7 +270,7 @@
         });
         $("#phone").on('input', function() {
             $phone = $("#phone").val(),
-            intRegex = /^(?:\+62|62|0)[2-9]\d{7,11}$/;
+            intRegex = /^(?:\08|0)[2-9]\d{7,11}$/;
 
             if($phone.length >= 11) {
                 if(intRegex.test($phone)) {

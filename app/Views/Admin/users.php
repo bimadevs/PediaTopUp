@@ -24,7 +24,7 @@
                           <th>Nama Lengkap</th>
                           <th>No.Telepon</th>
                           <th>Saldo</th>
-                          <th>Status</th>
+                          <th>Status Saldo</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -37,7 +37,7 @@
                             <td><?= $curr . " " .number_format($users['balance'], 0, ",", "."); ?></td>
                             <td>
                               <?php if($users['status'] == "Off") : ?>
-                                <label class="badge badge-danger">Tidak Aktif</label>
+                                <label class="badge badge-danger">Di blokir</label>
                               <?php else : ?>
                                 <label class="badge badge-success">Aktif</label>
                               <?php endif ?>
@@ -91,10 +91,10 @@
             <small class="text-danger d-none" id="errSaldo">*Abaikan jika tidak ingin mengubah balance</small>
           </div>
           <div class="form-group">
-            <label for="">Status Users</label>
+            <label for="">Status Saldo</label>
             <select name="status" id="status" class="form-control p-3" required>
-              <option value="On">Aktif</option>
-              <option value="Off">Tidak Aktif</option>
+              <option value="On">Aktifkan</option>
+              <option value="Off">Blokir</option>
             </select>
           </div>
         </div>

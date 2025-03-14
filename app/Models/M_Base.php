@@ -41,9 +41,9 @@ class M_Base extends Model {
 	}
 	public function all_data($table, $order = null) {
 		if ($order) {
-			return $this->db->table($table)->orderBy($order, 'DESC')->get()->getResultArray();
+			return $this->db->table($table)->orderBy($order, 'ASC')->get()->getResultArray();
 		} else {
-			return $this->db->table($table)->orderBy('id', 'DESC')->get()->getResultArray();
+			return $this->db->table($table)->orderBy('id', 'ASC')->get()->getResultArray();
 		}
 	}
 	public function data_insert($table, $data) {
@@ -99,11 +99,16 @@ class M_Base extends Model {
 			return $this->db->table($table)->where($filed . ' >=', $data[0])->where($filed . ' <=', $data[1])->get()->getResultArray();
 		}
 	}
-	public function data_join($tb, $tbJoin, $data, $join) {
-		return $this->db->table($tb)->select($data)->join($tbJoin, $join)->orderBy('id', 'DESC')->get()->getResultArray();
+	public function data_join($tb, $tbJoin, $data, $join, $order = null) {
+	    if ($order) {
+	       return $this->db->table($tb)->select($data)->join($tbJoin, $join)->orderBy($order, 'ASC')->get()->getResultArray(); 
+	    } else {
+	        return $this->db->table($tb)->select($data)->join($tbJoin, $join)->orderBy('id', 'ASC')->get()->getResultArray();
+	    }
+		
 	}
 	public function data_join_where($tb, $tbJoin, $data, $join, $key, $id) {
-		return $this->db->table($tb)->select($data)->join($tbJoin, $join)->where($key, $id)->get()->getResultArray();
+		return $this->db->table($tb)->select($data)->join($tbJoin, $join)->where($key, $id)->orderBy('created_at', 'ASC')->get()->getResultArray();
 	}
 	public function webconfig() {
 		return json_encode([

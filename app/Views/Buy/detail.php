@@ -126,11 +126,11 @@
                     <div class="col-12" style="padding: 0 30px;">
                         <span class="css-c1gsx8">Status Transaksi</span>
                         <?php if($GetTransaction[0]['status'] == "Completed") : ?>
-                            <p class="text-success font-weight-bold" style="margin-top: -5px;">BERHASIL</p>
+                            <p class="text-success font-weight-bold" style="margin-top: -5px;">Transaksi Berhasil</p>
                         <?php elseif($GetTransaction[0]['status'] == "Processing" || $GetTransaction[0]['status'] == "Pending") : ?>
-                            <p class="text-warning font-weight-bold" style="margin-top: -5px;"><?= $GetTransaction[0]['status'] ?></p>
+                            <p class="text-warning font-weight-bold" style="margin-top: -5px;">Sedang Diproses</p>
                         <?php else : ?>
-                            <p class="text-danger font-weight-bold" style="margin-top: -5px;"><?= $GetTransaction[0]['status'] ?></p>
+                            <p class="text-danger font-weight-bold" style="margin-top: -5px;">Transaksi Dibatalkan</p>
                         <?php endif ?>
                         
                     </div>

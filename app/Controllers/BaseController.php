@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Config\Encryption;
 
 use App\Models\M_Base;
 
@@ -39,11 +40,14 @@ class BaseController extends Controller
      * @var array
      */
     protected $helpers = ['form'];
+    
 
     /**
      * Constructor.
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) {
+        
+        date_default_timezone_set('Asia/Jakarta');
 
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
@@ -82,6 +86,14 @@ class BaseController extends Controller
             $users = false;
         }
 
+        // Hitung jumlah penarikan pending untuk badge notifikasi
+        $pending_withdrawals = 0;
+        if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+            foreach (array_reverse($this->M_Base->data_where('withdrawal', 'status', 'pending')) as $data_loop) {
+                $pending_withdrawals++;
+            }
+        }
+
         $this->base_data = [
             'users' => $users,
             'web' => [
@@ -92,7 +104,49 @@ class BaseController extends Controller
                 'keywords' => $this->M_Base->u_get('web-keywords'),
                 'description' => $this->M_Base->u_get('web-description'),
             ],
+            'pending_withdrawals' => $pending_withdrawals
         ];
+    }
+    
+    public function Encrypted($Password) {
+        $config         = config(Encryption::class);
+        $config->driver = 'OpenSSL';
+
+        $encrypter = service('encrypter', $config);
+        
+        $ciphertext = $encrypter->encrypt($Password);
+        return base64_encode($ciphertext);
+
+        //default menggunakan MCRYPT_RIJNDAEL_256 
+
+        // $hasil_dekripsi = $this->encrypt->decode($hasil_enkripsi, $Key); 
+        
+
+    }
+    
+    public function Decrypted($Password) {
+
+        $config         = config(Encryption::class);
+        $config->driver = 'OpenSSL';
+
+        $encrypter = service('encrypter', $config);
+        
+        $ciphertext = $encrypter->decrypt(base64_decode($Password));
+        return $ciphertext;
+    }
+    
+    public function TelegramMsg($Msg) {
+        $url = "https://api.telegram.org/bot" . $this->M_Base->u_get('bot_token') . "/sendMessage?chat_id=" . $this->M_Base->u_get('chat_id');
+        $url = $url . "&text=" . urlencode($Msg) . "&parse_mode=html";
+        $ch = curl_init();
+        $optArray = array(
+                CURLOPT_URL => $url,
+                CURLOPT_RETURNTRANSFER => true
+        );
+        curl_setopt_array($ch, $optArray);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        return $result;
     }
     
     public function msg($nomor, $msg)

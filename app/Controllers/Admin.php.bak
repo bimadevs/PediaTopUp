@@ -389,10 +389,10 @@ class Admin extends BaseController
                 'web_name' => $this->M_Base->u_get('web-title'),
                 'logo' => $this->M_Base->u_get('web-logo'),
                 'icon' => $this->M_Base->u_get('web-icon'),
-                'allCategory' => $getCategory
+                'category' => $getCategory
             ]);
-    
-            return view('Admin/Product/category', $data);
+
+            return view('Admin/category', $data);
         }
     }
 
@@ -954,9 +954,7 @@ class Admin extends BaseController
                 'bonus_deposit' => $this->M_Base->u_get('bonus-deposit'),
                 'fee_withdrawal' => $this->M_Base->u_get('fee-withdrawal'),
                 'slide' => $GetBanner,
-                'slide2' => $GetBanner2,
-                    'chat_id' => $this->M_Base->u_get('chat_id'),
-                    'bot_token' => $this->M_Base->u_get('bot_token')
+                'slide2' => $GetBanner2
             ]);
     
             return view('Admin/settings', $data);
@@ -970,88 +968,22 @@ class Admin extends BaseController
             $data_email = $this->M_Base->data_where('users', 'email', $_SESSION['email']);
 
             if ($data_email[0]['level'] === 'Admin') {
-                // Ambil section yang sedang diupdate
-                $section = $this->request->getPost('section');
-                
-                // Inisialisasi array data yang akan diupdate
-                $data_post = [];
-                
-                // Proses berdasarkan section
-                if ($section === 'umum') {
                 $data_post = [
-                        'web-title' => $this->request->getPost('web-title'),
-                        'web-description' => $this->request->getPost('web-description'),
-                        'web-keywords' => $this->request->getPost('web-keywords'),
-                        'web-author' => $this->request->getPost('web-author'),
-                    ];
-                    
-                    // Proses upload logo jika ada
-                    $logo = $this->request->getFile('web-logo');
-                    if ($logo && $logo->isValid() && !$logo->hasMoved()) {
-                        $newName = $logo->getRandomName();
-                        $logo->move(ROOTPATH . 'public/home/img/', $newName);
-                        $data_post['web-logo'] = $newName;
-                    }
-                    
-                    // Proses upload icon jika ada
-                    $icon = $this->request->getFile('web-icon');
-                    if ($icon && $icon->isValid() && !$icon->hasMoved()) {
-                        $newName = $icon->getRandomName();
-                        $icon->move(ROOTPATH . 'public/home/img/', $newName);
-                        $data_post['web-icon'] = $newName;
-                    }
-                } elseif ($section === 'banner') {
-                    // Proses upload banner jika ada
-                    $banners = $this->request->getFiles('banner');
-                    if ($banners) {
-                        $banner_names = [];
-                        foreach ($banners['banner'] as $banner) {
-                            if ($banner->isValid() && !$banner->hasMoved()) {
-                                $newName = $banner->getRandomName();
-                                $banner->move(ROOTPATH . 'public/home/img/banner/', $newName);
-                                $banner_names[] = $newName;
-                            }
-                        }
-                        
-                        if (!empty($banner_names)) {
-                            $data_post['slide'] = implode(',', $banner_names);
-                        }
-                    }
-                } elseif ($section === 'banner2') {
-                    // Proses upload banner2 jika ada
-                    $banners2 = $this->request->getFiles('banner2');
-                    if ($banners2) {
-                        $banner_names2 = [];
-                        foreach ($banners2['banner2'] as $banner2) {
-                            if ($banner2->isValid() && !$banner2->hasMoved()) {
-                                $newName = $banner2->getRandomName();
-                                $banner2->move(ROOTPATH . 'public/home/img/banner/', $newName);
-                                $banner_names2[] = $newName;
-                            }
-                        }
-                        
-                        if (!empty($banner_names2)) {
-                            $data_post['slide2'] = implode(',', $banner_names2);
-                        }
-                    }
-                } elseif ($section === 'other') {
-                $data_post = [
-                        'email' => $this->request->getPost('email'),
+                    'web-title' => $this->request->getPost('web-title'),
+                    'web-description' => $this->request->getPost('web-description'),
+                    'web-keywords' => $this->request->getPost('web-keywords'),
+                    'web-author' => $this->request->getPost('web-author'),
+                    'email' => $this->request->getPost('email'),
                     'phone' => $this->request->getPost('phone'),
-                        'bonus-deposit' => $this->request->getPost('bonus-deposit'),
+                    'pay-saldo' => $this->request->getPost('pay-saldo'),
                     'fee' => $this->request->getPost('fee'),
                     'currency' => $this->request->getPost('currency'),
-                        'fee-withdrawal' => $this->request->getPost('fee-withdrawal'),
-                    'chat_id' => $this->request->getPost('chat_id'),
-                        'bot_token' => $this->request->getPost('bot_token'),
-                    ];
-                }
+                    'bonus-deposit' => $this->request->getPost('bonus-deposit'),
+                    'fee-withdrawal' => $this->request->getPost('fee-withdrawal'),
+                ];
 
-                // Update data ke database
                 foreach ($data_post as $key => $value) {
-                    if ($value !== null) {
-                        $this->M_Base->u_update($key, $value);
-                    }
+                    $this->M_Base->u_update($key, $value);
                 }
 
                 $this->session->setFlashdata('success', 'Pengaturan berhasil disimpan');
@@ -1143,28 +1075,22 @@ class Admin extends BaseController
             $data_email = $this->M_Base->data_where('users', 'email', $_SESSION['email']);
 
             if ($data_email[0]['level'] === 'Admin') {
-                $amount = $this->request->getPost('amount');
-                $status = $this->request->getPost('status');
-                
-                if (empty($amount) || $amount <= 0) {
-                    $this->session->setFlashdata('errors', 'Nominal tidak valid');
-                    return redirect()->to('/admin/deposit/amount');
-                }
-                
-                $data = [
-                    'amount' => $amount,
-                    'status' => $status
+                $data_post = [
+                    'amount' => $this->request->getPost('amount'),
+                    'status' => $this->request->getPost('status'),
                 ];
-                
-                if ($this->M_Base->data_insert('deposit_amount', $data)) {
-                    $this->session->setFlashdata('success', 'Nominal deposit berhasil ditambahkan');
-                } else {
-                    $this->session->setFlashdata('errors', 'Gagal menambahkan nominal deposit');
-                }
-                
+
+                if (empty($data_post['amount'])) {
+                    $this->session->setFlashdata('error', 'Nominal tidak boleh kosong');
                     return redirect()->to('/admin/deposit/amount');
                 } else {
-                $this->session->setFlashdata('errors', 'Hak akses tidak mencukupi');
+                    $this->M_Base->data_insert('deposit_amount', $data_post);
+
+                    $this->session->setFlashdata('success', 'Nominal deposit berhasil ditambahkan');
+                    return redirect()->to('/admin/deposit/amount');
+                }
+            } else {
+                $this->session->setFlashdata('error', 'Hak akses tidak mencukupi');
                 return redirect()->to('/admin/deposit/amount');
             }
         }
@@ -1181,22 +1107,22 @@ class Admin extends BaseController
 
         if(empty($amount) || $amount <= 0) {
             $this->session->setFlashdata('errors', 'Nominal tidak valid');
-                    return redirect()->to('/admin/deposit/amount');
-                }
+            return redirect()->to('/admin/withdrawal/amount');
+        }
 
-        $update = $this->M_Base->data_update('deposit_amount', [
+        $update = $this->M_Base->data_update('withdrawal_amount', [
             'amount' => $amount,
             'status' => $status,
         ], $id);
 
         if($update) {
-            $this->session->setFlashdata('success', 'Nominal deposit berhasil diubah');
-            } else {
-            $this->session->setFlashdata('errors', 'Nominal deposit gagal diubah');
+            $this->session->setFlashdata('success', 'Nominal penarikan berhasil diubah');
+        } else {
+            $this->session->setFlashdata('errors', 'Nominal penarikan gagal diubah');
         }
 
-                return redirect()->to('/admin/deposit/amount');
-            }
+        return redirect()->to('/admin/withdrawal/amount');
+    }
 
     public function DepositAmountDelete($id) {
         if(!isset($_SESSION['email']) || empty($_SESSION['email'])) {
@@ -1205,7 +1131,7 @@ class Admin extends BaseController
             $data_email = $this->M_Base->data_where('users', 'email', $_SESSION['email']);
 
             if ($data_email[0]['level'] !== 'Admin') {
-                $this->session->setFlashdata('errors', 'Hak akses tidak mencukupi');
+                $this->session->setFlashdata('error', 'Hak akses tidak mencukupi');
                 return redirect()->to('/admin/deposit/amount');
             }
 
@@ -1213,7 +1139,7 @@ class Admin extends BaseController
                 $this->session->setFlashdata('success', 'Nominal deposit berhasil dihapus');
                 return redirect()->to('/admin/deposit/amount');
             } else {
-                $this->session->setFlashdata('errors', 'Nominal deposit gagal dihapus');
+                $this->session->setFlashdata('error', 'Nominal deposit gagal dihapus');
                 return redirect()->to('/admin/deposit/amount');
             }
         }
@@ -1304,7 +1230,7 @@ class Admin extends BaseController
         
         // Cek apakah user adalah admin
         if ($data_email[0]['level'] !== 'Admin') {
-            $this->session->setFlashdata('errors', 'Hak akses tidak mencukupi');
+            $this->session->setFlashdata('error', 'Hak akses tidak mencukupi');
             return redirect()->to('/admin/withdrawal');
         }
         
@@ -1316,7 +1242,7 @@ class Admin extends BaseController
         // Cek apakah withdrawal ada
         $withdrawal = $this->M_Base->data_where('withdrawal', 'id', $id);
         if (count($withdrawal) === 0) {
-            $this->session->setFlashdata('errors', 'Gagal! Penarikan tidak ditemukan');
+            $this->session->setFlashdata('error', 'Penarikan tidak ditemukan');
             return redirect()->to('/admin/withdrawal');
         }
         
@@ -1336,39 +1262,8 @@ class Admin extends BaseController
             'note' => $note
         ], $id);
         
-        // Kirim notifikasi ke admin via Telegram
-        $user = $this->M_Base->data_where('users', 'id', $withdrawal[0]['id_user']);
-        $bank = $this->M_Base->data_where('bank_withdrawal', 'id', $withdrawal[0]['id_bank']);
-        $bank_name = count($bank) > 0 ? $bank[0]['name'] : '-';
-        $user_name = count($user) > 0 ? $user[0]['name'] : '-';
-        $user_phone = count($user) > 0 ? $user[0]['phone'] : '-';
-        
-        $nominal = $withdrawal[0]['total'] + $withdrawal[0]['fee'];
-        $fee = $withdrawal[0]['fee'];
-        $total = $withdrawal[0]['total'];
-        $currency = $this->M_Base->u_get('currency');
-        
-        $message = '--[ Update Status Penarikan Saldo ]--' . PHP_EOL . PHP_EOL;
-        $message .= '- Invoice: #' . $id . PHP_EOL;
-        $message .= '- Nama: ' . $user_name . PHP_EOL;
-        $message .= '- No.HP/WA: ' . $user_phone . PHP_EOL;
-        $message .= '- Bank: ' . $bank_name . PHP_EOL;
-        $message .= '- No. Rekening: ' . $withdrawal[0]['bank_account'] . PHP_EOL;
-        $message .= '- Nama Pemilik: ' . $withdrawal[0]['account_name'] . PHP_EOL;
-        $message .= '- Nominal: ' . $currency . ' ' . number_format($nominal, 0, ',', '.') . PHP_EOL;
-        $message .= '- Biaya Admin: ' . $currency . ' ' . number_format($fee, 0, ',', '.') . PHP_EOL;
-        $message .= '- Total Diterima: ' . $currency . ' ' . number_format($total, 0, ',', '.') . PHP_EOL;
-        $message .= '- Tanggal: ' . $this->M_Base->tanggal_indo(date('Y-m-d')) . PHP_EOL;
-        $message .= '- Status: ' . ucfirst($status) . PHP_EOL;
-        if (!empty($note)) {
-            $message .= '- Catatan: ' . $note . PHP_EOL;
-        }
-        $message .= PHP_EOL . 'By ' . $this->M_Base->u_get('web-title');
-        
-        $this->TelegramMsg($message);
-        
         // Set flashdata dan redirect
-        $this->session->setFlashdata('success', 'Horee! Penarikan berhasil diupdate');
+        $this->session->setFlashdata('success', 'Status penarikan berhasil diperbarui');
         return redirect()->to('/admin/withdrawal');
     }
     
@@ -1404,7 +1299,7 @@ class Admin extends BaseController
                 $status = $this->request->getPost('status');
                 
                 if (empty($amount) || $amount <= 0) {
-                    $this->session->setFlashdata('errors', 'Nominal tidak valid');
+                    $this->session->setFlashdata('error', 'Nominal tidak valid');
                     return redirect()->to('/admin/withdrawal/amount');
                 }
                 
@@ -1416,43 +1311,15 @@ class Admin extends BaseController
                 if ($this->M_Base->data_insert('withdrawal_amount', $data)) {
                     $this->session->setFlashdata('success', 'Nominal penarikan berhasil ditambahkan');
                 } else {
-                    $this->session->setFlashdata('errors', 'Gagal menambahkan nominal penarikan');
+                    $this->session->setFlashdata('error', 'Gagal menambahkan nominal penarikan');
                 }
                 
                 return redirect()->to('/admin/withdrawal/amount');
             } else {
-                $this->session->setFlashdata('errors', 'Hak akses tidak mencukupi');
+                $this->session->setFlashdata('error', 'Hak akses tidak mencukupi');
                 return redirect()->to('/admin/withdrawal/amount');
             }
         }
-    }
-    
-    public function WithdrawalAmountEdit() {
-        if(!isset($_SESSION['email']) || empty($_SESSION['email'])) {
-            return redirect()->to('/admin/auth');
-        }
-
-        $id = $this->request->getPost('id');
-        $amount = $this->request->getPost('amount');
-        $status = $this->request->getPost('status');
-
-        if(empty($amount) || $amount <= 0) {
-            $this->session->setFlashdata('errors', 'Nominal tidak valid');
-            return redirect()->to('/admin/withdrawal/amount');
-        }
-
-        $update = $this->M_Base->data_update('withdrawal_amount', [
-            'amount' => $amount,
-            'status' => $status,
-        ], $id);
-
-        if($update) {
-            $this->session->setFlashdata('success', 'Nominal penarikan berhasil diubah');
-            } else {
-            $this->session->setFlashdata('errors', 'Nominal penarikan gagal diubah');
-        }
-
-        return redirect()->to('/admin/withdrawal/amount');
     }
     
     public function WithdrawalAmountDelete($id) {
@@ -1462,7 +1329,7 @@ class Admin extends BaseController
             $data_email = $this->M_Base->data_where('users', 'email', $_SESSION['email']);
 
             if ($data_email[0]['level'] !== 'Admin') {
-                $this->session->setFlashdata('errors', 'Hak akses tidak mencukupi');
+                $this->session->setFlashdata('error', 'Hak akses tidak mencukupi');
                 return redirect()->to('/admin/withdrawal/amount');
             }
 
@@ -1470,7 +1337,7 @@ class Admin extends BaseController
                 $this->session->setFlashdata('success', 'Nominal penarikan berhasil dihapus');
                 return redirect()->to('/admin/withdrawal/amount');
             } else {
-                $this->session->setFlashdata('errors', 'Nominal penarikan gagal dihapus');
+                $this->session->setFlashdata('error', 'Nominal penarikan gagal dihapus');
                 return redirect()->to('/admin/withdrawal/amount');
             }
         }
@@ -1528,6 +1395,8 @@ class Admin extends BaseController
 
             $name = $this->request->getPost('name');
             $code = $this->request->getPost('code');
+            $number = $this->request->getPost('number');
+            $holder = $this->request->getPost('holder');
             $status = $this->request->getPost('status');
 
             $icon = $this->request->getFile('icon');
@@ -1543,6 +1412,8 @@ class Admin extends BaseController
             $data = [
                 'name' => $name,
                 'code' => $code,
+                'number' => $number,
+                'holder' => $holder,
                 'icon' => $iconName,
                 'status' => $status,
             ];
@@ -1571,6 +1442,8 @@ class Admin extends BaseController
             $id = $this->request->getPost('id');
             $name = $this->request->getPost('name');
             $code = $this->request->getPost('code');
+            $number = $this->request->getPost('number');
+            $holder = $this->request->getPost('holder');
             $status = $this->request->getPost('status');
 
             $icon = $this->request->getFile('icon');
@@ -1583,6 +1456,8 @@ class Admin extends BaseController
                 $data = [
                     'name' => $name,
                     'code' => $code,
+                    'number' => $number,
+                    'holder' => $holder,
                     'icon' => $iconName,
                     'status' => $status,
                 ];
@@ -1590,6 +1465,8 @@ class Admin extends BaseController
                 $data = [
                     'name' => $name,
                     'code' => $code,
+                    'number' => $number,
+                    'holder' => $holder,
                     'status' => $status,
                 ];
             }

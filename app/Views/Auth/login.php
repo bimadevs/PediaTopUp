@@ -91,7 +91,7 @@
                         <form action="/login" method="POST">
                             <?= csrf_field() ?>
                             <div class="form-group">
-                                <input type="tel" name="phone" id="phone" class="form-control d-block buy-form-control" maxlength="16" placeholder="Nomor HP" autocomplete="off" required>
+                                <input type="tel" name="phone" id="phone" class="form-control d-block buy-form-control" minlength="10" maxlength="16" placeholder="Nomor HP" autocomplete="off" required>
                                 <!-- <label class="buy-label" for="">Nomor HP atau Email</label> -->
                                 <small class="text-danger d-none" id="ErrPhone" style="font-size: 10px;"></small>
                             </div>
@@ -105,7 +105,6 @@
                             </div>
                             <div class="form-group">
                                 <label class="d-block mx-auto text-center mt-4">Belum punya akun? <a href="/register" style="color: #00AA5B"> Daftar disini</a></label>
-                                <label class="d-block mx-auto text-center mt-3"><a href="/login" style="color: #00AA5B"> Lupa Password</a></label>
                             </div>
                         </form>
                     </div>

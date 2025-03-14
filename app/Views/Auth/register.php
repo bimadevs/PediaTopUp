@@ -103,7 +103,7 @@
                             <div class="form-group">
                                 <input type="tel" name="phone" id="phone" class="form-control d-block buy-form-control" maxlength="16" placeholder="Nomor HP (Whatsapp)" required>
                                 <!-- <label class="buy-label" for="">Nomor HP atau Email</label> -->
-                                <small class="text-danger d-none" id="ErrPhone" style="font-size: 10px;"></small>
+                                <small class="text-danger d-none" id="ErrPhone2" style="font-size: 10px;"></small>
                             </div>
                             <div class="form-group">
                                 <input type="password" name="password" id="password" class="form-control d-block buy-form-control" placeholder="Password" autocomplete="off" required>
@@ -116,7 +116,7 @@
                                 <small class="text-danger d-block" id="ErrRePasswd" style="font-size: 12px; margin-top: 5px; left: 2px;"></small>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-success d-block mx-auto w-100">Daftar</button>
+                                <button class="btn btn-success d-block mx-auto w-100" id="BTNSubmit" disabled>Daftar</button>
                             </div>
                             <div class="form-group">
                                 <label class="d-block mx-auto text-center mt-4">Sudah punya akun? <a href="/login" style="color: #00AA5B"> Login disini</a></label>
@@ -132,6 +132,27 @@
 
 <?php $this->section('js'); ?>
 <script>
+    $("#phone").on('input', function() {
+        $phone = $("#phone").val(),
+        intRegex = /^(?:\08|0)[2-9]\d{7,11}$/;
+
+        if($phone.length >= 11) {
+            if(intRegex.test($phone)) {
+                $("#ErrPhone2").addClass('d-none');
+                $("#ErrPhone2").html('');
+                $("#BTNSubmit").attr('disabled', false);
+            } else {
+                $("#ErrPhone2").removeClass('d-none');
+                $("#ErrPhone2").html('Masukkan nomor Whatsapp yang valid!');
+                $("#BTNSubmit").attr('disabled', true);
+            }
+        } else {
+            $("#ErrPhone2").removeClass('d-none');
+            $("#ErrPhone2").html('Masukkan nomor Whatsapp yang valid!');
+            $("#BTNSubmit").attr('disabled', true);
+        }
+    }); 
+        
     $("form#FormValidation").on('submit', function() {
         $Password = $("#password").val();
         $rePassword = $("#repassword").val();

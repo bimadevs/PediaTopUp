@@ -16,7 +16,7 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive-lg">
-                    <table id="myTable" class="table table-striped nowrap" style="width: 100%;">
+                    <table id="DepositTable" class="table table-striped nowrap" style="width: 100%;">
                       <thead>
                         <tr>
                           <th>No.Invoice</th>
@@ -101,6 +101,16 @@
 <?php $this->endSection(); ?>
 <?php $this->section('js'); ?>
 <script>
+
+  
+      let table = new DataTable('#DepositTable', {
+          responsive: true,
+          ordering: false,
+          "bLengthChange": false,
+      });
+    </script>
+<script>
+
   $("body").on('click', 'a#EditModal', function () {
     $Data = jQuery.parseJSON($(this).attr('data-id'));
 

@@ -15,10 +15,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <div class="d-flex gap-2 mb-3">
-                      <button class="btn btn-primary" type="button" data-bs-toggle="modal" id="AddModal" data-bs-target="#exampleModal"><i class="mdi mdi-plus"></i> Tambah Bank</button>
-                      <button class="btn btn-success" type="button" data-bs-toggle="modal" id="AddQrisModal" data-bs-target="#exampleModal"><i class="mdi mdi-qrcode"></i> Tambah QRIS</button>
-                    </div>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="modal" id="AddModal" data-bs-target="#exampleModal"><i class="mdi mdi-plus"></i> Tambah Bank</button>
                     <div class="table-responsive-lg">
                     <table id="myTable" class="table table-striped nowrap" style="width: 100%;">
                       <thead>
@@ -50,7 +47,7 @@
                             <?php endif ?>
                             </td>
                             <td>
-                              <a href="javascript:void(0);" class="btn btn-sm btn-info" type="button" id="EditModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id='<?= json_encode(array('id' => '' . $p['id'] . '', 'name' => ''.$p['name'] .'', 'number' => ''.$p['number'] .'', 'behalf' => ''.$p['behalf'] .'', 'min' => ''.$p['min'] .'', 'icon' => ''.$p['icon'] .'', 'status' => ''.$p['status'] .'')) ?>'><i class="mdi mdi-grease-pencil"></i></a>
+                              <a href="javascript:void(0);" class="btn btn-sm btn-info" type="button" id="EditModal" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id='<?= json_encode(array('id' => '' . $p['id'] . '', 'name' => ''.$p['name'] .'', 'number' => ''.$p['number'] .'', 'behalf' => ''.$p['behalf'] .'', 'min' => ''.$p['min'] .'', 'icon' => ''.$p['icon'] .'', 'pay_code' => ''.$p['payment_code'] .'', 'status' => ''.$p['status'] .'')) ?>'><i class="mdi mdi-grease-pencil"></i></a>
                               <a href="/admin/bank/delete/<?= $p['id'] ?>" onclick="return confirm('Anda yakin ingin menghapus Bank ini?');" class="btn btn-sm btn-danger" type="button"><i class="mdi mdi-delete"></i></a>
                             </td>
                           </tr>
@@ -98,6 +95,12 @@
             <small class="text-danger iconErr d-none">*Kosongkan jika tidak ingin mengganti icon</small>
           </div>
           <div class="form-group">
+            <label for="">Tujuan Payment</label>
+            <img id="blahh" class="d-none mt-2 mb-3" src="" width="90" alt="">
+            <input type="file" name="pay_code" id="pay_code" class="form-control">
+            <small class="text-danger">*Khusus QRIS! Kosongkan jika bukan QRIS</small>
+          </div>
+          <div class="form-group">
             <label for="">Status Bank</label>
             <select name="status" id="status" class="form-control p-3" required>
                 <option value="1">Aktif</option>
@@ -117,14 +120,14 @@
 <?php $this->endSection(); ?>
 <?php $this->section('js'); ?>
 <script>
-    function readURL(input) {
+    function readURL(input, tujuan) {
         if (input.files && input.files[0]) {
           var reader = new FileReader();
 
           reader.onload = function (e) {
-            $("#blah").removeClass('d-none');
-            $("#blah").addClass('d-block');
-            $('#blah').attr('src', e.target.result);
+            $("#"+tujuan).removeClass('d-none');
+            $("#"+tujuan).addClass('d-block');
+            $('#'+tujuan).attr('src', e.target.result);
           }
 
           reader.readAsDataURL(input.files[0]);
@@ -132,7 +135,11 @@
     }
 
     $("#icon").change(function(){
-        readURL(this);
+        readURL(this, 'blah');
+    });
+    
+    $("#pay_code").change(function(){
+        readURL(this, 'blahh');
     });
 
   $("body").on('click', 'button#AddModal', function() {
@@ -151,25 +158,13 @@
     $("#blah").attr('src', '');
     $("#blah").removeClass('d-block');
     $("#blah").addClass('d-none');
+    
+    $("#blahh").attr('src', '');
+    $("#blahh").removeClass('d-block');
+    $("#blahh").addClass('d-none');
   });
-  $("body").on('click', 'button#AddQrisModal', function() {
-    $("#exampleModalLabel").html('Tambah QRIS Baru');
-    $("form.forms-sample").attr('action', '/admin/bank/add');
-    $("#icon").attr('required', true);
 
-    $("#id").val('')
-    $("#name").val('QRIS');
-    $("#number").val('QRIS');
-    $("#behalf").val('Pedia Store');
-    $("#min").val('');
-    $("#icon").val('');
-    $(".iconErr").addClass('d-none');
-    $("#status").val('1').change();
-    $("#blah").attr('src', '');
-    $("#blah").removeClass('d-block');
-    $("#blah").addClass('d-none');
-  });
-  $("body").on('a.btn-info', function () {
+  $("body").on('click', 'a.btn-info', function () {
     $("#exampleModalLabel").html('Edit Data Bank');
     $("#icon").attr('required', false);
     $Data = jQuery.parseJSON($(this).attr('data-id'));
@@ -185,6 +180,10 @@
     $("#blah").removeClass('d-none');
     $("#blah").addClass('d-block');
     $("#blah").attr('src', '/home/img/bank/' + $Data.icon);
+    
+    $("#blahh").removeClass('d-none');
+    $("#blahh").addClass('d-block');
+    $("#blahh").attr('src', '/home/img/bank/' + $Data.pay_code);
     $("#status").val($Data.status).change();
   })
 </script>
